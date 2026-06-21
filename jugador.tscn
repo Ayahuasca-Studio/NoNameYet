@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bpjutmbiqhr4r" path="res://Assets/Personaje/Walk_Technician.png" id="3_ukil5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
-size = Vector2(80, 96)
+size = Vector2(13, 20)
 
 [sub_resource type="Animation" id="Animation_8o684"]
 length = 0.001
@@ -185,25 +185,33 @@ _data = {
 
 [node name="Jugador" type="CharacterBody2D" unique_id=1844464217]
 position = Vector2(576, 324)
+collision_mask = 3
 script = ExtResource("1_omvyu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=587280061]
-position = Vector2(0, 15)
+position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="Idle" type="Sprite2D" parent="." unique_id=979785693]
 texture_filter = 1
-scale = Vector2(4, 4)
 texture = ExtResource("2_8o684")
 hframes = 24
 frame = 18
 
 [node name="Walk" type="Sprite2D" parent="." unique_id=1193929453]
 texture_filter = 1
-scale = Vector2(4, 4)
 texture = ExtResource("3_ukil5")
 hframes = 24
 frame = 18
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2126829355]
 libraries/ = SubResource("AnimationLibrary_xwd11")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=62972645]
+zoom = Vector2(2.5, 2.5)
+limit_enabled = false
+limit_left = -431
+limit_top = -271
+limit_right = 415
+limit_bottom = 111
+position_smoothing_speed = 4.0

@@ -7,8 +7,7 @@
 [node name="mundo" type="Node2D" unique_id=1341854704]
 script = ExtResource("1_fw4w5")
 
-[node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("1_lgngo")]
-position = Vector2(575, 323)
-
 [node name="Maquina" parent="." unique_id=899099243 instance=ExtResource("2_fw4w5")]
 position = Vector2(276, 181)
+
+[node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("1_lgngo")]

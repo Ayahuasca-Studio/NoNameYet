@@ -79,7 +79,7 @@ func intentar_reparar() -> void:
 		actualizar_visualizacion()
 		
 		# Restamos 25 puntos de estrés acumulado al reparar con éxito
-		var mundo = get_parent()
+		var mundo = owner
 		if mundo and mundo.has_method("modificar_estres"):
 			mundo.modificar_estres(-25.0)
 	else:
@@ -109,6 +109,6 @@ func _process(delta: float) -> void:
 	if estado_actual != Estados.NORMAL:
 		# Si la máquina tiene una falla, le pide al escenario principal (Mundo) 
 		# que sume estrés a la planta. Multiplicamos por delta para que sea constante.
-		var mundo = get_parent()
+		var mundo = owner
 		if mundo and mundo.has_method("modificar_estres"):
 			mundo.modificar_estres(2.0 * delta) # Sube 2 puntos de estrés por segundo

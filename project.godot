@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MantenimientoCritico_Demo1"
-run/main_scene="uid://duq47ba14t06e"
+run/main_scene="uid://4h6pi1agd28h"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -1,19 +1,31 @@
 [gd_scene format=3 uid="uid://bvxhe1vpkwqks"]
 
-[ext_resource type="Texture2D" uid="uid://wk57oj8qvx6d" path="res://icon.svg" id="1_pokhh"]
 [ext_resource type="Script" uid="uid://crhlkd72bmui0" path="res://Scripts/maquina.gd" id="1_xss06"]
+[ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="2_xss06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
-size = Vector2(261, 211)
+size = Vector2(64, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(31, 35)
 
 [node name="Maquina" type="Area2D" unique_id=899099243]
 script = ExtResource("1_xss06")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=794194822]
-texture = ExtResource("1_pokhh")
+texture = ExtResource("2_xss06")
+region_enabled = true
+region_rect = Rect2(160, 1032, 40, 40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1933240020]
-position = Vector2(2.5, 0.5)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="Timer" type="Timer" parent="." unique_id=1845722605]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=429623138]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1678508454]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_13qdw")
