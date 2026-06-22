@@ -4,6 +4,7 @@ extends Node2D
 var estres_planta: float = 0.0
 var max_estres: float = 100.0
 var juego_terminado: bool = false
+@onready var interfaz = $Interfaz
 
 # Un temporizador interno para no saturar la consola imprimiendo a cada milisegundo
 var tiempo_impresion: float = 0.0
@@ -29,6 +30,10 @@ func modificar_estres(cantidad: float) -> void:
 		
 	# Modificamos el valor y usamos 'clampf' para asegurarnos de que no baje de 0 ni suba de 100
 	estres_planta = clampf(estres_planta + cantidad, 0.0, max_estres)
+	
+	#control de interfaz grafica
+	if interfaz:
+		interfaz.actualizar_estres(estres_planta)
 	
 	# Condición de derrota
 	if estres_planta >= max_estres:

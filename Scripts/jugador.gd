@@ -42,12 +42,15 @@ func _input(event: InputEvent) -> void:
 	# Sistema de inventario por consola
 	if Input.is_action_just_pressed("herramienta_1"):
 		herramienta_activa = Herramientas.LLAVE_INGLESA
+		actualizar_ui_herramienta()
 		print("Herramienta equipada: LLAVE INGLESA")
 	elif Input.is_action_just_pressed("herramienta_2"):
 		herramienta_activa = Herramientas.EXTINTOR
+		actualizar_ui_herramienta()
 		print("Herramienta equipada: EXTINTOR")
 	elif Input.is_action_just_pressed("herramienta_3"):
 		herramienta_activa = Herramientas.MULTIMETRO
+		actualizar_ui_herramienta()
 		print("Herramienta equipada: MULTÍMETRO")
 
 # FUNCIÓN DE ANIMACIÓN
@@ -70,3 +73,12 @@ func update_animation(direction: Vector2):
 			anim_player.play("idle_down")
 		elif last_direction.y < 0:
 			anim_player.play("idle_up")
+
+func actualizar_ui_herramienta() -> void:
+	var interfaz = get_parent().get_node_or_null("Interfaz")
+	if interfaz:
+		match herramienta_activa:
+			Herramientas.NINGUNA: interfaz.cambiar_icono_herramienta("NINGUNA")
+			Herramientas.LLAVE_INGLESA: interfaz.cambiar_icono_herramienta("LLAVE")
+			Herramientas.EXTINTOR: interfaz.cambiar_icono_herramienta("EXTINTOR")
+			Herramientas.MULTIMETRO: interfaz.cambiar_icono_herramienta("MULTIMETRO")

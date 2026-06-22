@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="3_8sjxe"]
 [ext_resource type="PackedScene" uid="uid://bvxhe1vpkwqks" path="res://maquina.tscn" id="5_jojke"]
 [ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://jugador.tscn" id="6_toyu6"]
+[ext_resource type="PackedScene" uid="uid://cg2naxywjdauc" path="res://interfaz.tscn" id="7_toyu6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1uv6g"]
 texture = ExtResource("1_ifyin")
@@ -2999,3 +3000,5 @@ position = Vector2(61, -6)
 
 [node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("6_toyu6")]
 position = Vector2(11, -105)
+
+[node name="Interfaz" parent="." unique_id=1390139656 instance=ExtResource("7_toyu6")]

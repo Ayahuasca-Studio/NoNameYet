@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cg2naxywjdauc"]
+
+[ext_resource type="Script" uid="uid://scx6r4nni27y" path="res://interfaz.gd" id="1_87hbf"]
+[ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="2_6loih"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrivr"]
+atlas = ExtResource("2_6loih")
+region = Rect2(208, 1632, 16, 16)
+
+[node name="Interfaz" type="CanvasLayer" unique_id=1390139656]
+script = ExtResource("1_87hbf")
+
+[node name="HUD" type="Control" parent="." unique_id=1907971068]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BarraEstres" type="ProgressBar" parent="HUD" unique_id=772098685]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 27.0
+offset_right = 170.0
+offset_bottom = 54.0
+
+[node name="Label" type="Label" parent="HUD/BarraEstres" unique_id=57762846]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -27.0
+offset_right = 173.0
+offset_bottom = -4.0
+text = "ESTRÉS DE LA PLANTA"
+
+[node name="IconoHerramienta" type="TextureRect" parent="HUD" unique_id=158150080]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -65.0
+offset_right = 51.0
+offset_bottom = -25.0
+grow_vertical = 0
+texture = SubResource("AtlasTexture_xrivr")
