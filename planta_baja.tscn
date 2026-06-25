@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="3_lkeov"]
 [ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://jugador.tscn" id="4_byow5"]
 [ext_resource type="Script" uid="uid://dkagnituqcf0u" path="res://Scripts/stair_up.gd" id="5_0wvs1"]
+[ext_resource type="Script" uid="uid://ieyn360usna7" path="res://Scripts/elevator.gd" id="7_fafjl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1e1l"]
 texture = ExtResource("1_lkeov")
@@ -2989,10 +2990,10 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_8u1eg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48abh"]
-size = Vector2(69, 41.5)
+size = Vector2(69, 16.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caews"]
-size = Vector2(56, 64)
+size = Vector2(39, 64)
 
 [node name="PlantaBaja" type="Node2D" unique_id=1965733878]
 script = ExtResource("1_ch4yv")
@@ -3013,27 +3014,32 @@ tile_set = SubResource("TileSet_7ge7i")
 collision_visibility_mode = 1
 
 [node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("4_byow5")]
-position = Vector2(178, -119)
+position = Vector2(187, -105)
 
 [node name="StairUp" type="Area2D" parent="." unique_id=1592475776]
 script = ExtResource("5_0wvs1")
-next_scene = "piso_uno_gameloop.tscn"
+next_scene = "piso_uno.tscn"
 target_spawn_point = "SpawnStairs"
 
 [node name="Stairs" type="CollisionShape2D" parent="StairUp" unique_id=1462334383]
-position = Vector2(176, -154.75)
+position = Vector2(176, -167.25)
 shape = SubResource("RectangleShape2D_48abh")
 
 [node name="Elevator" type="Area2D" parent="." unique_id=1037878544]
+script = ExtResource("7_fafjl")
+next_scene = "piso_uno.tscn"
+target_spawn_point = "SpawnElevator"
 
 [node name="Elevator" type="CollisionShape2D" parent="Elevator" unique_id=1957609693]
-position = Vector2(180, -224)
+position = Vector2(188.5, -224)
 shape = SubResource("RectangleShape2D_caews")
 
 [node name="SpawnStairs" type="Marker2D" parent="." unique_id=1140746320]
-position = Vector2(177, -123)
+position = Vector2(176, -135)
 
 [node name="SpawnElevator" type="Marker2D" parent="." unique_id=901285614]
-position = Vector2(137, -224)
+position = Vector2(152, -230)
+rotation = 1.5707964
 
 [connection signal="body_entered" from="StairUp" to="StairUp" method="_on_body_entered"]
+[connection signal="body_entered" from="Elevator" to="Elevator" method="_on_body_entered"]
