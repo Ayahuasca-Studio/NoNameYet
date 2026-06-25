@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://btef8tpe8jtxx"]
 
+[ext_resource type="Script" uid="uid://cvoieadc8ibyv" path="res://Scripts/planta_baja.gd" id="1_ch4yv"]
 [ext_resource type="Texture2D" uid="uid://1guvcgqscpb8" path="res://Assets/Map/Floor/Room_Builder_Floors_16x16.png" id="1_lkeov"]
 [ext_resource type="Texture2D" uid="uid://ue7h6rngt5f7" path="res://Assets/Map/Walls/Room_Builder_Walls_16x16.png" id="2_8u1eg"]
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="3_lkeov"]
 [ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://jugador.tscn" id="4_byow5"]
+[ext_resource type="Script" uid="uid://dkagnituqcf0u" path="res://Scripts/stair_up.gd" id="5_0wvs1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1e1l"]
 texture = ExtResource("1_lkeov")
@@ -2986,7 +2988,14 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_8u1eg")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48abh"]
+size = Vector2(69, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_caews"]
+size = Vector2(56, 64)
+
 [node name="PlantaBaja" type="Node2D" unique_id=1965733878]
+script = ExtResource("1_ch4yv")
 metadata/_edit_horizontal_guides_ = [-290.0]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=2059683810]
@@ -3004,5 +3013,27 @@ tile_set = SubResource("TileSet_7ge7i")
 collision_visibility_mode = 1
 
 [node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("4_byow5")]
-position = Vector2(354, 84)
-collision_mask = 3
+position = Vector2(178, -119)
+
+[node name="StairUp" type="Area2D" parent="." unique_id=1592475776]
+script = ExtResource("5_0wvs1")
+next_scene = "piso_uno_gameloop.tscn"
+target_spawn_point = "SpawnStairs"
+
+[node name="Stairs" type="CollisionShape2D" parent="StairUp" unique_id=1462334383]
+position = Vector2(176, -154.75)
+shape = SubResource("RectangleShape2D_48abh")
+
+[node name="Elevator" type="Area2D" parent="." unique_id=1037878544]
+
+[node name="Elevator" type="CollisionShape2D" parent="Elevator" unique_id=1957609693]
+position = Vector2(180, -224)
+shape = SubResource("RectangleShape2D_caews")
+
+[node name="SpawnStairs" type="Marker2D" parent="." unique_id=1140746320]
+position = Vector2(177, -123)
+
+[node name="SpawnElevator" type="Marker2D" parent="." unique_id=901285614]
+position = Vector2(137, -224)
+
+[connection signal="body_entered" from="StairUp" to="StairUp" method="_on_body_entered"]

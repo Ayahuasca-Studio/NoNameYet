@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://1guvcgqscpb8" path="res://Assets/Map/Floor/Room_Builder_Floors_16x16.png" id="1_ldytk"]
 [ext_resource type="Texture2D" uid="uid://ue7h6rngt5f7" path="res://Assets/Map/Walls/Room_Builder_Walls_16x16.png" id="2_yxbrr"]
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="4_1uv6g"]
+[ext_resource type="Script" uid="uid://dkagnituqcf0u" path="res://Scripts/stair_up.gd" id="4_iee61"]
+[ext_resource type="Script" uid="uid://ieyn360usna7" path="res://Scripts/elevator.gd" id="5_schqx"]
+[ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://jugador.tscn" id="6_schqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1uv6g"]
 texture = ExtResource("1_ldytk")
@@ -2972,6 +2975,12 @@ texture = ExtResource("4_1uv6g")
 [sub_resource type="TileSet" id="TileSet_0yjdo"]
 sources/0 = SubResource("TileSetAtlasSource_gk1mw")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klhep"]
+size = Vector2(69, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gc5er"]
+size = Vector2(56, 64)
+
 [node name="piso_uno" type="Node2D" unique_id=23583590]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=639480090]
@@ -2986,3 +2995,33 @@ collision_visibility_mode = 1
 [node name="Decoration" type="TileMapLayer" parent="Walls" unique_id=2124692110]
 tile_map_data = PackedByteArray("AAALAPX/AAAIAC8AAAALAPb/AAAIAC8AAAALAPf/AAAIAC8AAAALAPj/AAAIAC8AAAAMAPX/AAAHAC8AAAAMAPb/AAAHAC8AAAAMAPf/AAAHAC8AAAAMAPj/AAAHAC8AAAAJAPX/AAAHAC8AADAJAPb/AAAHAC8AADAJAPf/AAAHAC8AADAJAPj/AAAHAC8AADAKAPX/AAAIAC8AADAKAPb/AAAIAC8AADAKAPf/AAAIAC8AADAKAPj/AAAIAC8AADA=")
 tile_set = SubResource("TileSet_0yjdo")
+
+[node name="Stair" type="Area2D" parent="." unique_id=1225523699]
+script = ExtResource("4_iee61")
+next_scene = "planta_baja.tscn"
+target_spawn_point = "SpawnStairs"
+
+[node name="StairCollision" type="CollisionShape2D" parent="Stair" unique_id=1432425930]
+position = Vector2(176, -154.75)
+shape = SubResource("RectangleShape2D_klhep")
+
+[node name="Elevator" type="Area2D" parent="." unique_id=423343122]
+script = ExtResource("5_schqx")
+next_scene = "planta_baja.tscn"
+target_spawn_point = "SpawnElevator"
+
+[node name="Elevator" type="CollisionShape2D" parent="Elevator" unique_id=572120983]
+position = Vector2(180, -224)
+shape = SubResource("RectangleShape2D_gc5er")
+
+[node name="SpawnStairs" type="Marker2D" parent="." unique_id=1529156457]
+position = Vector2(176, -109)
+
+[node name="SpawnElevator" type="Marker2D" parent="." unique_id=890281817]
+position = Vector2(142, -224)
+
+[node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("6_schqx")]
+position = Vector2(73, -13)
+
+[connection signal="body_entered" from="Stair" to="Stair" method="_on_body_entered"]
+[connection signal="body_entered" from="Elevator" to="Elevator" method="_on_body_entered"]
