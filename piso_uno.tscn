@@ -2994,7 +2994,7 @@ tile_map_data = PackedByteArray("AAAGAO//AAAFAAoAAAAHAO//AAAFAAoAAAAIAO//AAAFAAo
 tile_set = SubResource("TileSet_bsiq8")
 collision_visibility_mode = 1
 
-[node name="Decoration" type="TileMapLayer" parent="Walls" unique_id=2124692110]
+[node name="Stairs" type="TileMapLayer" parent="." unique_id=2124692110]
 tile_map_data = PackedByteArray("AAALAPX/AAAIAC8AAAALAPb/AAAIAC8AAAALAPf/AAAIAC8AAAALAPj/AAAIAC8AAAAMAPX/AAAHAC8AAAAMAPb/AAAHAC8AAAAMAPf/AAAHAC8AAAAMAPj/AAAHAC8AAAAJAPX/AAAHAC8AADAJAPb/AAAHAC8AADAJAPf/AAAHAC8AADAJAPj/AAAHAC8AADAKAPX/AAAIAC8AADAKAPb/AAAIAC8AADAKAPf/AAAIAC8AADAKAPj/AAAIAC8AADA=")
 tile_set = SubResource("TileSet_0yjdo")
 
