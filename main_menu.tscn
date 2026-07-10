@@ -11,6 +11,14 @@
 [ext_resource type="Texture2D" uid="uid://ic5q4ki3jyf7" path="res://Assets/GUI/Menu/SalirNa.png" id="8_w44g7"]
 [ext_resource type="Texture2D" uid="uid://c2v228ng3xtiu" path="res://Assets/GUI/Menu/salirH.png" id="9_cm266"]
 [ext_resource type="Texture2D" uid="uid://d31jc13tlxftq" path="res://Assets/GUI/Menu/Logo.png" id="11_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://xjk4aagygs6b" path="res://Assets/GUI/Menu/MenuLevel.png" id="12_j5v2v"]
+[ext_resource type="Texture2D" uid="uid://dax8q6wu5xiju" path="res://Assets/GUI/Menu/1.png" id="13_oiatc"]
+[ext_resource type="Texture2D" uid="uid://bdi5gf6nqtkw3" path="res://Assets/GUI/Menu/1h.png" id="14_mg3m2"]
+[ext_resource type="Texture2D" uid="uid://dn2v8njq5qvqg" path="res://Assets/GUI/Menu/2.png" id="15_ojb7r"]
+[ext_resource type="Texture2D" uid="uid://da4lxkixnbgdb" path="res://Assets/GUI/Menu/2h.png" id="16_e5qqf"]
+[ext_resource type="Texture2D" uid="uid://cbg4ixuydjbyv" path="res://Assets/GUI/Menu/3.png" id="17_7bbuq"]
+[ext_resource type="Texture2D" uid="uid://myfwd17647gh" path="res://Assets/GUI/Menu/3h.png" id="18_saq78"]
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="19_mg3m2"]
 
 [node name="MainMenu" type="Control" unique_id=46966233]
 layout_mode = 3
@@ -115,3 +123,64 @@ offset_right = 1829.0
 offset_bottom = 1642.0
 scale = Vector2(0.12, 0.12)
 texture = ExtResource("11_0k4wn")
+
+[node name="Level" type="CanvasLayer" parent="." unique_id=1466846105]
+
+[node name="ColorRect" type="ColorRect" parent="Level" unique_id=1644647050]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09411765, 0.09411765, 0.09411765, 0.8117647)
+
+[node name="LevelsContainer" type="TextureRect" parent="Level" unique_id=1016553896]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -280.0
+offset_right = 2606.9995
+offset_bottom = 2354.9998
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_j5v2v")
+
+[node name="One" type="TextureButton" parent="Level" unique_id=770911229]
+offset_left = 465.0
+offset_top = 170.0
+offset_right = 1025.0
+offset_bottom = 384.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("13_oiatc")
+texture_hover = ExtResource("14_mg3m2")
+
+[node name="Two" type="TextureButton" parent="Level" unique_id=2027636273]
+offset_left = 465.0
+offset_top = 291.0
+offset_right = 1025.0
+offset_bottom = 505.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("15_ojb7r")
+texture_hover = ExtResource("16_e5qqf")
+
+[node name="Three" type="TextureButton" parent="Level" unique_id=141429593]
+offset_left = 465.0
+offset_top = 413.0
+offset_right = 1025.0
+offset_bottom = 627.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("17_7bbuq")
+texture_hover = ExtResource("18_saq78")
+
+[node name="Exit" type="Button" parent="Level" unique_id=809901818]
+offset_left = 1082.0
+offset_top = -4.0
+offset_right = 1144.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("19_mg3m2")
+theme_override_font_sizes/font_size = 49
+text = "x"
