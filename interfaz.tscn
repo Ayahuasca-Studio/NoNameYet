@@ -7,6 +7,21 @@
 atlas = ExtResource("2_6loih")
 region = Rect2(208, 1632, 16, 16)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(1, 0.30120113, 0.50535953, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13qdw"]
+atlas = ExtResource("2_6loih")
+region = Rect2(176, 1176, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1lj4"]
+atlas = ExtResource("2_6loih")
+region = Rect2(104, 1200, 16, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njqwk"]
+atlas = ExtResource("2_6loih")
+region = Rect2(8, 1256, 16, 8)
+
 [node name="Interfaz" type="CanvasLayer" unique_id=1390139656]
 script = ExtResource("1_87hbf")
 
@@ -45,3 +60,63 @@ offset_right = 51.0
 offset_bottom = -25.0
 grow_vertical = 0
 texture = SubResource("AtlasTexture_xrivr")
+
+[node name="BarraVida" type="ProgressBar" parent="HUD" unique_id=20238044]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -179.0
+offset_top = 21.0
+offset_right = -18.0
+offset_bottom = 48.0
+grow_horizontal = 0
+theme_override_styles/fill = SubResource("StyleBoxFlat_xrivr")
+value = 100.0
+
+[node name="Label" type="Label" parent="HUD/BarraVida" unique_id=762046890]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -23.0
+offset_right = 39.0
+offset_bottom = 19.0
+text = "Vida"
+
+[node name="ContenedorEPP" type="HBoxContainer" parent="HUD" unique_id=599058200]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 2.0
+offset_right = 145.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_constants/separation = 12
+
+[node name="IconoCasco" type="TextureRect" parent="HUD/ContenedorEPP" unique_id=2127842392]
+modulate = Color(1, 1, 1, 0.25882354)
+texture_filter = 1
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+texture = SubResource("AtlasTexture_13qdw")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="IconoOrejeras" type="TextureRect" parent="HUD/ContenedorEPP" unique_id=1418390300]
+modulate = Color(1, 1, 1, 0.41960785)
+texture_filter = 1
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+texture = SubResource("AtlasTexture_b1lj4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="IconoBotas" type="TextureRect" parent="HUD/ContenedorEPP" unique_id=1133641308]
+modulate = Color(1, 1, 1, 0.4)
+texture_filter = 1
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+texture = SubResource("AtlasTexture_njqwk")
+expand_mode = 3
+stretch_mode = 5

@@ -1,5 +1,20 @@
 extends CharacterBody2D
 
+# --- SISTEMA DE EPP ---
+# Definimos los tipos de Equipo de Protección Personal
+enum EPP { CASCO, OREJERAS, BOTAS_DIELECTRICAS }
+# Diccionario para saber qué tiene equipado actualmente el técnico
+var epp_equipado = {
+	EPP.CASCO: false,
+	EPP.OREJERAS: false,
+	EPP.BOTAS_DIELECTRICAS: false
+}
+
+# --- VARIABLES DE SALUD ---
+var salud_max: float = 100.0
+var salud_actual: float = 100.0
+var esta_vivido: bool = true
+
 # --- VARIABLES DE MOVIMIENTO ---
 @export var velocidad: float = 150.0 # velocidad de los sprites
 
@@ -17,6 +32,10 @@ var herramienta_activa: Herramientas = Herramientas.NINGUNA
 func _ready() -> void:
 	print("--- DEMO DE MANTENIMIENTO CRÍTICO INICIADA ---")
 	print("Presiona 1, 2 o 3 para equipar una herramienta.")
+	# Esperamos un frame para asegurarnos de que la interfaz ya cargó en el mapa
+	await get_tree().process_frame
+	actualizar_ui_salud()
+	actualizar_ui_epp()
 
 func _physics_process(delta: float) -> void:
 	# Sistema de vectores para controla inputs
@@ -52,6 +71,14 @@ func _input(event: InputEvent) -> void:
 		herramienta_activa = Herramientas.MULTIMETRO
 		actualizar_ui_herramienta()
 		print("Herramienta equipada: MULTÍMETRO")
+	
+	# TEST TEMPORAL DE DAÑO
+	#if Input.is_action_just_pressed("ui_accept"): # Al presionar Enter / Espacio
+		#recibir_danio(15.0)
+		
+	# TEST TEMPORAL DE EPP: Al presionar la tecla "Tab" equipa el casco automáticamente
+	if Input.is_action_just_pressed("ui_focus_next"): # Por defecto suele ser la tecla Tab
+		equipar_epp(EPP.CASCO)
 
 # FUNCIÓN DE ANIMACIÓN
 func update_animation(direction: Vector2):
@@ -82,3 +109,48 @@ func actualizar_ui_herramienta() -> void:
 			Herramientas.LLAVE_INGLESA: interfaz.cambiar_icono_herramienta("LLAVE")
 			Herramientas.EXTINTOR: interfaz.cambiar_icono_herramienta("EXTINTOR")
 			Herramientas.MULTIMETRO: interfaz.cambiar_icono_herramienta("MULTIMETRO")
+
+# --- Funciones de danio ---
+func recibir_danio(cantidad: float) -> void:
+	if not esta_vivido:
+		return
+		
+	# Restamos vida y nos aseguramos de que no baje de 0 ni suba de 100
+	salud_actual = clampf(salud_actual - cantidad, 0.0, salud_max)
+	
+	# Avisamos a la Interfaz para que se actualice visualmente
+	actualizar_ui_salud()
+	
+	# Verificamos la condición de derrota por accidente laboral
+	if salud_actual <= 0.0:
+		morir_por_accidente()
+
+func actualizar_ui_salud() -> void:
+	# Buscamos el nodo Interfaz en la raíz de la escena para mandarle los datos
+	var interfaz = owner.get_node_or_null("Interfaz")
+	if interfaz:
+		interfaz.actualizar_vida(salud_actual)
+
+func morir_por_accidente() -> void:
+	esta_vivido = false
+	set_physics_process(false) # Bloqueamos el movimiento del jugador
+	print("🚨 Accidente Laboral Crítico: El técnico quedó incapacitado.")
+	
+	# Comunicamos al cerebro global (Mundo) que detenga el juego
+	if owner and owner.has_method("derrota_juego"):
+		owner.derrota_juego()
+
+
+
+# Función para equipar un EPP
+func equipar_epp(tipo_epp: int) -> void:
+	if epp_equipado.has(tipo_epp):
+		epp_equipado[tipo_epp] = true
+		print("🛡️ EPP Equipado exitosamente: ", EPP.keys()[tipo_epp])
+		actualizar_ui_epp()
+
+func actualizar_ui_epp() -> void:
+	var interfaz = owner.get_node_or_null("Interfaz")
+	if interfaz:
+		# Le pasamos el diccionario completo a la interfaz para que se actualice
+		interfaz.actualizar_ranuras_epp(epp_equipado)

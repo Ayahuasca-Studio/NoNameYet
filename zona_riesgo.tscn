@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpvgpoeabsi2o"]
+
+[ext_resource type="Script" uid="uid://dibfkkhopp8m7" path="res://zona_riesgo.gd" id="1_pfmtc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(154, 20)
+
+[node name="ZonaRiesgo" type="Area2D" unique_id=2044102159]
+collision_layer = 0
+script = ExtResource("1_pfmtc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=831719646]
+position = Vector2(67, 0)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="TimerDanio" type="Timer" parent="." unique_id=1060667094]
