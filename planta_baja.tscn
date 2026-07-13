@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://btef8tpe8jtxx"]
 
+[ext_resource type="Script" uid="uid://cvoieadc8ibyv" path="res://Scripts/planta_baja.gd" id="1_ch4yv"]
 [ext_resource type="Texture2D" uid="uid://1guvcgqscpb8" path="res://Assets/Map/Floor/Room_Builder_Floors_16x16.png" id="1_lkeov"]
 [ext_resource type="Texture2D" uid="uid://ue7h6rngt5f7" path="res://Assets/Map/Walls/Room_Builder_Walls_16x16.png" id="2_8u1eg"]
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="3_lkeov"]
 [ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://jugador.tscn" id="4_byow5"]
+[ext_resource type="Script" uid="uid://dkagnituqcf0u" path="res://Scripts/stair_up.gd" id="5_0wvs1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1e1l"]
 texture = ExtResource("1_lkeov")
@@ -2986,7 +2988,11 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_8u1eg")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(64, 20)
+
 [node name="PlantaBaja" type="Node2D" unique_id=1965733878]
+script = ExtResource("1_ch4yv")
 metadata/_edit_horizontal_guides_ = [-290.0]
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=2059683810]
@@ -3005,4 +3011,17 @@ collision_visibility_mode = 1
 
 [node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("4_byow5")]
 position = Vector2(354, 84)
-collision_mask = 3
+
+[node name="Stairs" type="Area2D" parent="." unique_id=2058659559]
+script = ExtResource("5_0wvs1")
+next_scene = "piso_uno_gameloop.tscn"
+target_spawn_point = "SpawnStairs"
+
+[node name="StairCollision" type="CollisionShape2D" parent="Stairs" unique_id=1457727912]
+position = Vector2(176, -166)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="SpawnStairs" type="Marker2D" parent="." unique_id=1555238953]
+position = Vector2(176, -143)
+
+[connection signal="body_entered" from="Stairs" to="Stairs" method="_on_body_entered"]

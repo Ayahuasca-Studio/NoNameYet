@@ -77,8 +77,8 @@ func _input(event: InputEvent) -> void:
 		#recibir_danio(15.0)
 		
 	# TEST TEMPORAL DE EPP: Al presionar la tecla "Tab" equipa el casco automáticamente
-	if Input.is_action_just_pressed("ui_focus_next"): # Por defecto suele ser la tecla Tab
-		equipar_epp(EPP.CASCO)
+	#if Input.is_action_just_pressed("ui_focus_next"): # Por defecto suele ser la tecla Tab
+		#equipar_epp(EPP.CASCO)
 
 # FUNCIÓN DE ANIMACIÓN
 func update_animation(direction: Vector2):
@@ -145,9 +145,15 @@ func morir_por_accidente() -> void:
 # Función para equipar un EPP
 func equipar_epp(tipo_epp: int) -> void:
 	if epp_equipado.has(tipo_epp):
-		epp_equipado[tipo_epp] = true
-		print("🛡️ EPP Equipado exitosamente: ", EPP.keys()[tipo_epp])
-		actualizar_ui_epp()
+		if epp_equipado[tipo_epp] == false:
+			epp_equipado[tipo_epp] = true
+			print("🛡️ EPP Equipado exitosamente: ", EPP.keys()[tipo_epp])
+			actualizar_ui_epp()
+		else:
+			epp_equipado[tipo_epp] = false
+			print("🛡️ EPP Desequipado exitosamente: ", EPP.keys()[tipo_epp])
+			actualizar_ui_epp()
+		
 
 func actualizar_ui_epp() -> void:
 	var interfaz = owner.get_node_or_null("Interfaz")

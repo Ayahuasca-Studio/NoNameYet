@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ietgmy0a4r6l"]
+
+[ext_resource type="Script" uid="uid://k7dy3ln37fpj" path="res://Scripts/casillero_epp.gd" id="1_6cgeh"]
+[ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="1_wiyqy"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_13qdw"]
+diffuse_texture = ExtResource("1_wiyqy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(36, 41)
+
+[node name="CasilleroEPP" type="Area2D" unique_id=922661653]
+script = ExtResource("1_6cgeh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328285498]
+texture_filter = 1
+texture = SubResource("CanvasTexture_13qdw")
+region_enabled = true
+region_rect = Rect2(64, 336, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=403228781]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="IndicadorCasillero" type="Label" parent="." unique_id=984108870]
+offset_left = -21.0
+offset_top = -27.0
+offset_right = 21.0
+offset_bottom = -15.0
+theme_override_font_sizes/font_size = 8
+text = "Presiona E"

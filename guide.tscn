@@ -1,0 +1,417 @@
+[gd_scene format=3 uid="uid://cp4j6lol5k0y8"]
+
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="1_4mqed"]
+[ext_resource type="Script" uid="uid://cv1288mc565oi" path="res://manual.gd" id="2_83y8a"]
+[ext_resource type="Texture2D" uid="uid://cdwukxkijotpi" path="res://Assets/Personaje/ReadingSprite.png" id="2_feuw2"]
+[ext_resource type="Texture2D" uid="uid://dkig8xf4nxwwy" path="res://Assets/GUI/Guide/shorts.png" id="2_gajip"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vriaa"]
+load_path = "res://.godot/imported/Turning_pages_right.png-7ee52a7c94fe7f1c8a7b7b27dd094500.ctex"
+
+[sub_resource type="Animation" id="Animation_gajip"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manual/Pages:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_kce4j"]
+resource_name = "change_left"
+step = 0.06
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manual/Pages:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.12, 0.17999999, 0.24, 0.29999998, 0.35999998, 0.42, 0.48, 0.53999996, 0.59999996, 0.65999997, 0.71999997, 0.78, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_83y8a"]
+resource_name = "change_right"
+step = 0.06
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manual/Pages:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.12, 0.17999999, 0.24, 0.29999998, 0.35999998, 0.42, 0.48, 0.53999996, 0.59999996, 0.65999997, 0.71999997, 0.78, 0.84),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_utvnm"]
+_data = {
+&"RESET": SubResource("Animation_gajip"),
+&"change_left": SubResource("Animation_kce4j"),
+&"change_right": SubResource("Animation_83y8a")
+}
+
+[sub_resource type="Animation" id="Animation_utvnm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manual/Reading:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rn84f"]
+resource_name = "Reading"
+length = 2.0
+loop_mode = 1
+step = 0.083
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manual/Reading:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083, 0.166, 0.24899998, 0.332, 0.415, 0.49799997, 0.581, 0.664, 0.747, 0.83, 0.913),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_de3e4"]
+_data = {
+&"RESET": SubResource("Animation_utvnm"),
+&"Reading": SubResource("Animation_rn84f")
+}
+
+[node name="Guide" type="CanvasLayer" unique_id=2012251856]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=709984719]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.003921569, 0.003921569, 0.003921569, 0.68235296)
+
+[node name="Exit" type="Button" parent="." unique_id=273785354]
+offset_left = 1082.0
+offset_top = -4.0
+offset_right = 1144.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("1_4mqed")
+theme_override_font_sizes/font_size = 49
+text = "x"
+
+[node name="Manual" type="Control" parent="." unique_id=119882326]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_83y8a")
+
+[node name="Interaction" type="TextureRect" parent="Manual" unique_id=976761610]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 25.0
+offset_right = 2332.047
+offset_bottom = 412.2381
+scale = Vector2(0.21, 0.21)
+texture = ExtResource("2_gajip")
+
+[node name="Inst" type="Button" parent="Manual/Interaction" unique_id=1853871277]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 23.809418
+offset_top = 57.142845
+offset_right = 238.0953
+offset_bottom = 352.38095
+
+[node name="Inf" type="Button" parent="Manual/Interaction" unique_id=1378905808]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 266.6668
+offset_top = 57.142864
+offset_right = 480.9527
+offset_bottom = 352.38095
+
+[node name="Map" type="Button" parent="Manual/Interaction" unique_id=1868111289]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 519.0477
+offset_top = 57.14286
+offset_right = 733.3336
+offset_bottom = 352.38095
+
+[node name="Fire" type="Button" parent="Manual/Interaction" unique_id=1439527567]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 761.9049
+offset_top = 61.904762
+offset_right = 976.1908
+offset_bottom = 357.14285
+
+[node name="Serv" type="Button" parent="Manual/Interaction" unique_id=20915400]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1004.7621
+offset_top = 52.38095
+offset_right = 1219.048
+offset_bottom = 347.61905
+
+[node name="Boil" type="Button" parent="Manual/Interaction" unique_id=1831419591]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1247.6193
+offset_top = 61.904762
+offset_right = 1461.9052
+offset_bottom = 357.14285
+
+[node name="Energ" type="Button" parent="Manual/Interaction" unique_id=311142983]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1495.2383
+offset_top = 57.142857
+offset_right = 1709.5242
+offset_bottom = 352.38095
+
+[node name="Pages" type="Sprite2D" parent="Manual" unique_id=1040211224]
+position = Vector2(584.5, 228.875)
+scale = Vector2(3.3713233, 2.763787)
+texture = SubResource("CompressedTexture2D_vriaa")
+hframes = 4
+vframes = 4
+frame = 1
+
+[node name="Reading" type="Sprite2D" parent="Manual" unique_id=706800179]
+position = Vector2(87, 46.000008)
+scale = Vector2(2.9806826, 2.2732623)
+texture = ExtResource("2_feuw2")
+hframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Manual" unique_id=1068161401]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_utvnm")
+
+[node name="AnimationPerson" type="AnimationPlayer" parent="Manual" unique_id=1943110842]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_de3e4")
+autoplay = &"Reading"
+
+[node name="PageContainer" type="Control" parent="Manual" unique_id=1721105151]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Controles" type="Control" parent="Manual/PageContainer" unique_id=281975322]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Controles" unique_id=1097233226]
+layout_mode = 0
+offset_left = 339.99997
+offset_top = 106.99999
+offset_right = 490.83884
+offset_bottom = 146.69516
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+text = " Controles
+"
+
+[node name="Information" type="Control" parent="Manual/PageContainer" unique_id=856612444]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Information" unique_id=518001960]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 117.0
+offset_right = 496.83887
+offset_bottom = 156.69516
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+text = "Información"
+
+[node name="Mapa" type="Control" parent="Manual/PageContainer" unique_id=1690621858]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Mapa" unique_id=1662584076]
+layout_mode = 0
+offset_left = 369.99997
+offset_top = 112.99999
+offset_right = 432.08206
+offset_bottom = 152.69516
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+text = " Mapa"
+
+[node name="Fire" type="Control" parent="Manual/PageContainer" unique_id=993719827]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Fire" unique_id=1616281319]
+layout_mode = 0
+offset_left = 610.00006
+offset_top = 318.0
+offset_right = 960.8522
+offset_bottom = 559.6957
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+text = " INSTRUCCIONES
+ 1. Apagar el gas (P1)
+ 2. Usar casco, botas y  guantes
+ 3. Llevar extintor (Store)
+ 4. Apagar Fuego en kitchen
+ 5. Activar ventilación  y prender gas (P1) "
+
+[node name="Title" type="RichTextLabel" parent="Manual/PageContainer/Fire" unique_id=1600325370]
+layout_mode = 0
+offset_left = 333.99997
+offset_top = 111.0
+offset_right = 442.06635
+offset_bottom = 161.03357
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5578324, 0.46098202, 0.17176595, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+theme_override_font_sizes/normal_font_size = 17
+text = "Incendio"
+
+[node name="Server" type="Control" parent="Manual/PageContainer" unique_id=606954892]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Server" unique_id=1972765092]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 272.99997
+offset_right = 959.8521
+offset_bottom = 514.6956
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+text = " INSTRUCCIONES
+  1. Pedir tarjeta de acceso al  jefe (Of_1)
+ 2. Tomar refrigerante líquido (Store)
+ 3. Aplicar refrigerante y reiniciar Servidor (Protected area)
+ 5. Confirmar Reinicio con Jefe (of_1)"
+
+[node name="Title" type="RichTextLabel" parent="Manual/PageContainer/Server" unique_id=1884472172]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 110.99999
+offset_right = 574.1688
+offset_bottom = 161.03357
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5578324, 0.46098202, 0.17176595, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+theme_override_font_sizes/normal_font_size = 17
+text = "Sobrecalentamiento del  servidor "
+
+[node name="Boiler" type="Control" parent="Manual/PageContainer" unique_id=1568578707]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Boiler" unique_id=2088566527]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 355.0
+offset_right = 944.07355
+offset_bottom = 520.3959
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+text = " INSTRUCCIONES
+ 1. Apagar vapor (Control)
+ 2. Uso de guantes
+ 3. Arreglar maquina (Boiler Room)
+ 4. Prender vapor (Control)"
+
+[node name="Title" type="RichTextLabel" parent="Manual/PageContainer/Boiler" unique_id=1880167573]
+layout_mode = 0
+offset_left = 290.99997
+offset_top = 115.0
+offset_right = 595.1688
+offset_bottom = 165.03357
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5578324, 0.46098202, 0.17176595, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+theme_override_font_sizes/normal_font_size = 17
+text = " Fallo en las Calderas"
+
+[node name="Energy" type="Control" parent="Manual/PageContainer" unique_id=1178438757]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Energy" unique_id=180956731]
+layout_mode = 0
+offset_left = 627.0
+offset_top = 355.0
+offset_right = 944.07355
+offset_bottom = 520.3959
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+text = " INSTRUCCIONES
+  1. Para entrar necesitas orejeras
+ 2. Apagas las máquina (Energy)
+  3. Recargas de gasolina
+ 4. Prender la máquina
+"
+
+[node name="Title" type="RichTextLabel" parent="Manual/PageContainer/Energy" unique_id=968361522]
+layout_mode = 0
+offset_left = 292.99997
+offset_top = 109.0
+offset_right = 597.1688
+offset_bottom = 159.03357
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5578324, 0.46098202, 0.17176595, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+theme_override_font_sizes/normal_font_size = 17
+text = " Fallo en generador"
