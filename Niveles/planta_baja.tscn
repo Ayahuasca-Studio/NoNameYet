@@ -3014,7 +3014,7 @@ position = Vector2(354, 84)
 
 [node name="Stairs" type="Area2D" parent="." unique_id=2058659559]
 script = ExtResource("5_0wvs1")
-next_scene = "piso_uno_gameloop.tscn"
+next_scene = "res://Niveles/piso_uno.tscn"
 target_spawn_point = "SpawnStairs"
 
 [node name="StairCollision" type="CollisionShape2D" parent="Stairs" unique_id=1457727912]

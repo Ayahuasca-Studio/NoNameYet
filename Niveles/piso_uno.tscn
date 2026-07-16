@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ue7h6rngt5f7" path="res://Assets/Map/Walls/Room_Builder_Walls_16x16.png" id="2_yxbrr"]
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="4_1uv6g"]
 [ext_resource type="Script" uid="uid://dkagnituqcf0u" path="res://Scripts/stair_up.gd" id="4_qqwef"]
+[ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://Prefabs/jugador.tscn" id="6_t2bqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1uv6g"]
 texture = ExtResource("1_ldytk")
@@ -2978,6 +2979,7 @@ sources/0 = SubResource("TileSetAtlasSource_gk1mw")
 size = Vector2(64, 20)
 
 [node name="piso_uno" type="Node2D" unique_id=23583590]
+position = Vector2(27, -201)
 script = ExtResource("1_iee61")
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=639480090]
@@ -2995,6 +2997,8 @@ tile_set = SubResource("TileSet_0yjdo")
 
 [node name="StairUp" type="Area2D" parent="." unique_id=723805576]
 script = ExtResource("4_qqwef")
+next_scene = "res://Niveles/planta_baja.tscn"
+target_spawn_point = "SpawnStairs"
 
 [node name="Stairs" type="CollisionShape2D" parent="StairUp" unique_id=1726238896]
 position = Vector2(176, -166)
@@ -3002,5 +3006,8 @@ shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="SpawnStairs" type="Marker2D" parent="." unique_id=308184242]
 position = Vector2(176, -146)
+
+[node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("6_t2bqp")]
+position = Vector2(199, 30)
 
 [connection signal="body_entered" from="StairUp" to="StairUp" method="_on_body_entered"]
