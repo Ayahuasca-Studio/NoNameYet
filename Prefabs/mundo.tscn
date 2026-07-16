@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://duq47ba14t06e"]
 
 [ext_resource type="Script" uid="uid://c3sev2lfoluel" path="res://Scripts/mundo.gd" id="1_fw4w5"]
-[ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://jugador.tscn" id="1_lgngo"]
-[ext_resource type="PackedScene" uid="uid://bvxhe1vpkwqks" path="res://maquina.tscn" id="2_fw4w5"]
+[ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://Prefabs/jugador.tscn" id="1_lgngo"]
+[ext_resource type="PackedScene" uid="uid://bvxhe1vpkwqks" path="res://Prefabs/maquina.tscn" id="2_fw4w5"]
 
 [node name="mundo" type="Node2D" unique_id=1341854704]
 script = ExtResource("1_fw4w5")

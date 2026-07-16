@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cg2naxywjdauc"]
 
-[ext_resource type="Script" uid="uid://scx6r4nni27y" path="res://interfaz.gd" id="1_87hbf"]
+[ext_resource type="Script" uid="uid://scx6r4nni27y" path="res://Scripts/interfaz.gd" id="1_87hbf"]
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="2_6loih"]
+[ext_resource type="Texture2D" uid="uid://8x4sh1i0fhus" path="res://Assets/Map/EPP/casco.png" id="3_n1xfb"]
+[ext_resource type="Texture2D" uid="uid://dk81wjj4ecxov" path="res://Assets/Map/EPP/boots.png" id="4_w8172"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xrivr"]
 atlas = ExtResource("2_6loih")
@@ -10,17 +12,9 @@ region = Rect2(208, 1632, 16, 16)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
 bg_color = Color(1, 0.30120113, 0.50535953, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_13qdw"]
-atlas = ExtResource("2_6loih")
-region = Rect2(176, 1176, 16, 8)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1lj4"]
 atlas = ExtResource("2_6loih")
 region = Rect2(104, 1200, 16, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_njqwk"]
-atlas = ExtResource("2_6loih")
-region = Rect2(8, 1256, 16, 8)
 
 [node name="Interfaz" type="CanvasLayer" unique_id=1390139656]
 script = ExtResource("1_87hbf")
@@ -99,7 +93,7 @@ modulate = Color(1, 1, 1, 0.25882354)
 texture_filter = 1
 custom_minimum_size = Vector2(32, 16)
 layout_mode = 2
-texture = SubResource("AtlasTexture_13qdw")
+texture = ExtResource("3_n1xfb")
 expand_mode = 3
 stretch_mode = 5
 
@@ -117,6 +111,6 @@ modulate = Color(1, 1, 1, 0.4)
 texture_filter = 1
 custom_minimum_size = Vector2(32, 16)
 layout_mode = 2
-texture = SubResource("AtlasTexture_njqwk")
+texture = ExtResource("4_w8172")
 expand_mode = 3
 stretch_mode = 5

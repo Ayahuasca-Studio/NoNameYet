@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cp4j6lol5k0y8"]
 
 [ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="1_4mqed"]
-[ext_resource type="Script" uid="uid://cv1288mc565oi" path="res://manual.gd" id="2_83y8a"]
+[ext_resource type="Script" uid="uid://cv1288mc565oi" path="res://Scripts/manual.gd" id="2_83y8a"]
 [ext_resource type="Texture2D" uid="uid://cdwukxkijotpi" path="res://Assets/Personaje/ReadingSprite.png" id="2_feuw2"]
 [ext_resource type="Texture2D" uid="uid://dkig8xf4nxwwy" path="res://Assets/GUI/Guide/shorts.png" id="2_gajip"]
 

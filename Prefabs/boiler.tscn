@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bph2wnl2j0so2"]
+
+[ext_resource type="Script" uid="uid://btm22eu4hlgde" path="res://Scripts/boiler.gd" id="1_tjrs3"]
+[ext_resource type="Texture2D" uid="uid://de6xinljmob82" path="res://Assets/Map/Furniture/retro-pixel-art-industrial-boiler-with-steam-and-gears-nostalgic-gaming-design-free-vector-removebg-preview.png" id="1_u4i2f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(134, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(76, 67)
+
+[node name="Boiler" type="Area2D" unique_id=508071656]
+script = ExtResource("1_tjrs3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=103997566]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_u4i2f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=244396738]
+position = Vector2(1, 8.5)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1190378836]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=26068080]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_13qdw")
+debug_color = Color(0.85186297, 0.34329477, 0.38300171, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=150460581]
+wait_time = 5.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

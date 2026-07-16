@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://1guvcgqscpb8" path="res://Assets/Map/Floor/Room_Builder_Floors_16x16.png" id="1_aolv6"]
 [ext_resource type="Texture2D" uid="uid://ue7h6rngt5f7" path="res://Assets/Map/Walls/Room_Builder_Walls_16x16.png" id="2_78soc"]
-[ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://jugador.tscn" id="3_78soc"]
+[ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://Prefabs/jugador.tscn" id="3_78soc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ksgq"]
 texture = ExtResource("1_aolv6")
