@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://1bnos5p26itf"]
 
 [ext_resource type="Script" uid="uid://cqe0qjfradckw" path="res://Scripts/control.gd" id="1_8rkk6"]
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="2_xyw5n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(42, 17)
@@ -11,6 +12,15 @@ script = ExtResource("1_8rkk6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1771173032]
 shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.66141534, 0.5125434, 0.11280615, 0.41960785)
+
+[node name="Estado" type="Label" parent="." unique_id=1483745232]
+offset_left = -48.0
+offset_top = -34.0
+offset_right = 48.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_xyw5n")
+text = "Encender"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

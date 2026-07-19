@@ -44,7 +44,7 @@ func _on_btn_salir_principal_pressed():
 
 func _on_nivel_seleccionado():
 	# Redirige a la planta baja (por ahora todos) 
-	get_tree().change_scene_to_file("res://planta_baja.tscn")
+	get_tree().change_scene_to_file("res://Niveles/planta_baja_gameloop.tscn")
 
 func _on_btn_salir_niveles_pressed():
 	# Oculta el menú de niveles y vuelve a dejar interactuable el menú principal

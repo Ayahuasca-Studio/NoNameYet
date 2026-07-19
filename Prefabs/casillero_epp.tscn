@@ -2,12 +2,16 @@
 
 [ext_resource type="Script" uid="uid://k7dy3ln37fpj" path="res://Scripts/casillero_epp.gd" id="1_6cgeh"]
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="1_wiyqy"]
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="3_043d7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_13qdw"]
 diffuse_texture = ExtResource("1_wiyqy")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(36, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(16, 28)
 
 [node name="CasilleroEPP" type="Area2D" unique_id=922661653]
 script = ExtResource("1_6cgeh")
@@ -23,9 +27,18 @@ position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="IndicadorCasillero" type="Label" parent="." unique_id=984108870]
-offset_left = -21.0
-offset_top = -27.0
-offset_right = 21.0
-offset_bottom = -15.0
-theme_override_font_sizes/font_size = 8
+offset_left = -52.0
+offset_top = -41.0
+offset_right = 53.0
+offset_bottom = -17.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_043d7")
+theme_override_font_sizes/font_size = 16
 text = "Presiona E"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=820032490]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1650352186]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_13qdw")
+debug_color = Color(0.99260134, 0, 0.25617582, 0.41960785)

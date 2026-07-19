@@ -20,12 +20,12 @@ func cambioControl () -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name=="Jugador":
 		jugador_en_rango = body
-		print("El jugador toco la caldera")
+		print("El jugador toco el transformador")
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name=="Jugador":
 		jugador_en_rango = null
-		print("El jugador dejo la caldera")
+		print("El jugador dejo el transformador")
 
 func _input(event: InputEvent) -> void:
 	# Si el jugador está cerca Y presiona la BARRA ESPACIADORA (ui_accept es espacio/enter por defecto)
@@ -44,6 +44,7 @@ func intentar_reparar()->void:
 		var mundo = owner
 		if mundo and mundo.has_method("modificar_estres"):
 			mundo.modificar_estres(-25.0)
+		
 	else:
 		jugador_en_rango.recibir_danio(2)
 		print("No se reparo")
@@ -53,21 +54,29 @@ func intentar_reparar()->void:
 func _on_timer_timeout() -> void:
 	if estada_actual != Estados.Bien:
 		return
-	print("Por dañar")
+	print("Por dañar transformador")
 	var nueva_falla = 1
 	estada_actual = nueva_falla as Estados
 	actualizar_visualizacion()
-	print("dañar")
+	print("dañar transformador")
 	timer.wait_time = randf_range(15.0, 20.0)
 	timer.start()
-	print("reinicio reloj")
+	print("reinicio reloj transformador")
 
+
+func _process(delta: float) -> void:
+	if estada_actual != Estados.Bien:
+		# Si la máquina tiene una falla, le pide al escenario principal (Mundo) 
+		# que sume estrés a la planta. Multiplicamos por delta para que sea constante.
+		var mundo = owner
+		if mundo and mundo.has_method("modificar_estres"):
+			mundo.modificar_estres(2.0 * delta)
 
 func actualizar_visualizacion() -> void:
 	match estada_actual:
 		Estados.Bien:
 			sprite.modulate = Color.WHITE
-			print("Caldera operando con normalidad.")
+			print("Transformador operando con normalidad.")
 		Estados.Roto:
 			sprite.modulate = Color.RED
 			print("¡ALERTA! Se requiere Reparacion.")

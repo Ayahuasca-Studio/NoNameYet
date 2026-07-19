@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://wv1dwv7q8bv1"]
+
+[ext_resource type="Script" uid="uid://bqqqoh5j66soa" path="res://Scripts/transformador.gd" id="1_5momw"]
+[ext_resource type="Texture2D" uid="uid://eebrvwf5qhxo" path="res://Assets/Map/Furniture/retro-pixel-art-battery-icon-with-lightning-symbol-for-gaming-and-tech-illustrations-free-vector-removebg-preview.png" id="1_jseuf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(132, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(76, 77)
+
+[node name="Transformador" type="Area2D" unique_id=323665234]
+script = ExtResource("1_5momw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328564749]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_jseuf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1981759342]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_13qdw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1118290935]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=39041870]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_xrivr")
+debug_color = Color(0.66049254, 0, 0.11760258, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1982211372]
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

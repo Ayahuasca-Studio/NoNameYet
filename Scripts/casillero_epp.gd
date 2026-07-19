@@ -5,7 +5,7 @@ extends Area2D
 @export var nombre_item: String = "Casco de Seguridad"
 
 var jugador_cerca: CharacterBody2D = null
-@onready var indicador_interaccion: Label = $IndicadorCasillero # Si pusiste un Label de "Presiona E", vincúlalo aquí
+@onready var indicador_interaccion: Label = $IndicadorCasillero 
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)

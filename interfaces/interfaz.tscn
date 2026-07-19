@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="2_6loih"]
 [ext_resource type="Texture2D" uid="uid://8x4sh1i0fhus" path="res://Assets/Map/EPP/casco.png" id="3_n1xfb"]
 [ext_resource type="Texture2D" uid="uid://dk81wjj4ecxov" path="res://Assets/Map/EPP/boots.png" id="4_w8172"]
+[ext_resource type="Texture2D" uid="uid://bowedjrq6flqe" path="res://Assets/Map/EPP/guantes.png" id="4_xrrl2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xrivr"]
 atlas = ExtResource("2_6loih")
@@ -11,10 +12,6 @@ region = Rect2(208, 1632, 16, 16)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
 bg_color = Color(1, 0.30120113, 0.50535953, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b1lj4"]
-atlas = ExtResource("2_6loih")
-region = Rect2(104, 1200, 16, 8)
 
 [node name="Interfaz" type="CanvasLayer" unique_id=1390139656]
 script = ExtResource("1_87hbf")
@@ -49,11 +46,12 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 11.0
-offset_top = -65.0
-offset_right = 51.0
+offset_top = -131.0
+offset_right = 119.0
 offset_bottom = -25.0
 grow_vertical = 0
 texture = SubResource("AtlasTexture_xrivr")
+stretch_mode = 5
 
 [node name="BarraVida" type="ProgressBar" parent="HUD" unique_id=20238044]
 layout_mode = 1
@@ -102,7 +100,7 @@ modulate = Color(1, 1, 1, 0.41960785)
 texture_filter = 1
 custom_minimum_size = Vector2(32, 16)
 layout_mode = 2
-texture = SubResource("AtlasTexture_b1lj4")
+texture = ExtResource("4_xrrl2")
 expand_mode = 3
 stretch_mode = 5
 
