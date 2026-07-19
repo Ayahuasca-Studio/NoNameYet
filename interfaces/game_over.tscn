@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://trcyw1okioy2"]
+
+[ext_resource type="Script" uid="uid://bftqrf1syxox6" path="res://Scripts/game_over.gd" id="1_8ajg0"]
+[ext_resource type="Texture2D" uid="uid://bygtt5jyfxnae" path="res://Assets/GUI/Gemini_Generated_Image_ogtsqgogtsqgogts.png" id="1_qtk0t"]
+[ext_resource type="Texture2D" uid="uid://36rfgavq65p8" path="res://Assets/GUI/Menu/volver_a_menu.png" id="2_dix3j"]
+[ext_resource type="Texture2D" uid="uid://cargmxjgn0rkg" path="res://Assets/GUI/Menu/volver_a_menu_hover.png" id="3_iprt5"]
+[ext_resource type="Texture2D" uid="uid://ic5q4ki3jyf7" path="res://Assets/GUI/Menu/SalirNa.png" id="4_8ajg0"]
+[ext_resource type="Texture2D" uid="uid://c2v228ng3xtiu" path="res://Assets/GUI/Menu/salirH.png" id="5_7r16l"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=2064016400]
+script = ExtResource("1_8ajg0")
+
+[node name="Control" type="Control" parent="." unique_id=1837935728]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=418184230]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qtk0t")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="Control" unique_id=2032878842]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -162.0
+offset_right = -31.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_dix3j")
+texture_hover = ExtResource("3_iprt5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="Control" unique_id=1099913839]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 34.0
+offset_top = -139.0
+offset_right = 255.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_8ajg0")
+texture_hover = ExtResource("5_7r16l")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="Control/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Control/TextureButton2" to="." method="_on_texture_button_2_pressed"]

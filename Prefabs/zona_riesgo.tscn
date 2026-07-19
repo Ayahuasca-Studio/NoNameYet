@@ -12,5 +12,6 @@ script = ExtResource("1_pfmtc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=831719646]
 position = Vector2(67, 0)
 shape = SubResource("RectangleShape2D_xrivr")
+debug_color = Color(0.7117445, 0.26884806, 0.9912763, 0.41960785)
 
 [node name="TimerDanio" type="Timer" parent="." unique_id=1060667094]

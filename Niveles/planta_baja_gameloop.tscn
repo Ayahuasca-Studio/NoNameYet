@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ietgmy0a4r6l" path="res://Prefabs/casillero_epp.tscn" id="9_1byjf"]
 [ext_resource type="PackedScene" uid="uid://cg2naxywjdauc" path="res://interfaces/interfaz.tscn" id="10_6rx4i"]
 [ext_resource type="PackedScene" uid="uid://wv1dwv7q8bv1" path="res://Prefabs/transformador.tscn" id="11_qrb6p"]
+[ext_resource type="PackedScene" uid="uid://cpvgpoeabsi2o" path="res://Prefabs/zona_riesgo.tscn" id="12_bgxpg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1e1l"]
 texture = ExtResource("2_fpmlx")
@@ -3018,7 +3019,7 @@ position = Vector2(354, 84)
 
 [node name="Stairs" type="Area2D" parent="." unique_id=2058659559]
 script = ExtResource("6_bgxpg")
-next_scene = "piso_uno_gameloop.tscn"
+next_scene = "Niveles//piso_uno_gameloop.tscn"
 target_spawn_point = "SpawnStairs"
 
 [node name="StairCollision" type="CollisionShape2D" parent="Stairs" unique_id=1457727912]
@@ -3048,5 +3049,11 @@ maquina = NodePath("../Transformador")
 
 [node name="Transformador" parent="." unique_id=323665234 instance=ExtResource("11_qrb6p")]
 position = Vector2(-315, -17)
+
+[node name="ZonaRiesgo-Transformador" parent="." unique_id=2044102159 instance=ExtResource("12_bgxpg")]
+position = Vector2(-401.99997, -22)
+scale = Vector2(1.3, 8)
+epp_requerido = 2
+danio_por_segundo = 25.0
 
 [connection signal="body_entered" from="Stairs" to="Stairs" method="_on_body_entered"]
