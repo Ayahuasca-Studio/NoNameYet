@@ -111,15 +111,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.003921569, 0.003921569, 0.003921569, 0.68235296)
 
-[node name="Exit" type="Button" parent="." unique_id=273785354]
-offset_left = 1082.0
-offset_top = -4.0
-offset_right = 1144.0
-offset_bottom = 79.0
-theme_override_fonts/font = ExtResource("1_4mqed")
-theme_override_font_sizes/font_size = 49
-text = "x"
-
 [node name="Manual" type="Control" parent="." unique_id=119882326]
 layout_mode = 3
 anchors_preset = 0
