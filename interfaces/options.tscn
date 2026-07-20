@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://hqcxiv2ruyqm"]
+
+[ext_resource type="Texture2D" uid="uid://7e45v4ersv20" path="res://Assets/GUI/Options/rt96.png" id="1_3cdnv"]
+[ext_resource type="Script" uid="uid://bopumrnbufex5" path="res://Scripts/options.gd" id="1_t1m5g"]
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="2_3cdnv"]
+[ext_resource type="Texture2D" uid="uid://crkwks78smrkl" path="res://Assets/GUI/Options/switchup.png" id="3_m3bsj"]
+[ext_resource type="Texture2D" uid="uid://cmuqie4x3msms" path="res://Assets/GUI/Options/switchdown.png" id="4_t1m5g"]
+
+[node name="Options" type="Control" unique_id=764918039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t1m5g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=917576302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5372549)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1800233936]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -578.0
+offset_top = -297.0
+offset_right = 1782.0
+offset_bottom = 1071.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.49032903, 0.4221199)
+texture = ExtResource("1_3cdnv")
+
+[node name="Integrantes" type="Label" parent="TextureRect" unique_id=142407950]
+layout_mode = 0
+offset_left = 1327.6799
+offset_top = 364.8253
+offset_right = 1958.6799
+offset_bottom = 712.8253
+scale = Vector2(1.3769541, 1.6053102)
+theme_override_colors/font_color = Color(0.02745098, 0.22352941, 0.43137255, 1)
+theme_override_fonts/font = ExtResource("2_3cdnv")
+theme_override_font_sizes/font_size = 22
+text = "Facilitador de iPlus: Mayra Carrion
+Experto en Seguridad Industrial: Nick Valverde
+Game Designer: Alejandro Minda
+Developer 1: Janhzar Macias
+Developer 2: Pablo Maldonado
+Operario: Doménica Sánchez
+Experto pedagógico: Alexander Motoche"
+
+[node name="Exit" type="Button" parent="." unique_id=2107652167]
+layout_mode = 0
+offset_left = 1074.0
+offset_top = 17.0
+offset_right = 1136.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("2_3cdnv")
+theme_override_font_sizes/font_size = 49
+text = "x"
+
+[node name="SoundButton" type="TextureButton" parent="." unique_id=975964310]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 340.0
+offset_right = 1009.0
+offset_bottom = 1590.0
+rotation = -1.5825628
+scale = Vector2(0.095124215, 0.12885948)
+toggle_mode = true
+texture_normal = ExtResource("3_m3bsj")
+texture_pressed = ExtResource("4_t1m5g")
+
+[node name="sound" type="Label" parent="SoundButton" unique_id=1788330681]
+modulate = Color(0.8203659, 0.82036585, 0.8203658, 1)
+layout_mode = 0
+offset_left = 1566.3883
+offset_top = 5.8453817
+offset_right = 2233.3882
+offset_bottom = 353.84537
+rotation = 1.5707964
+scale = Vector2(1.9882501, 3.0585654)
+theme_override_colors/font_color = Color(0.42745098, 0.19215687, 0.08235294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3cdnv")
+theme_override_font_sizes/font_size = 157
+text = "SONIDO"
+
+[node name="sound2" type="Label" parent="SoundButton" unique_id=2123040779]
+modulate = Color(0.8203659, 0.82036585, 0.8203658, 1)
+layout_mode = 0
+offset_left = -31.288044
+offset_top = -15.793648
+offset_right = 792.712
+offset_bottom = 332.20636
+rotation = 1.5707964
+scale = Vector2(1.6030815, 2.309633)
+theme_override_colors/font_color = Color(0.42745098, 0.19215687, 0.08235294, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3cdnv")
+theme_override_font_sizes/font_size = 157
+text = "NO        SÍ"
