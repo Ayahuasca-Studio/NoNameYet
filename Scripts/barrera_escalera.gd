@@ -50,6 +50,7 @@ func abrir_barrera() -> void:
 	if esta_abierta: return # Evitar doble ejecución
 
 	esta_abierta = true
+	AudioConfig.play_sfx(AudioConfig.SFX_BARRIER_OPEN)
 	print("🚨 Barrera: ¡Abriendo acceso a escaleras!")
 
 	# 1. Efecto Visual

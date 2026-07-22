@@ -25,6 +25,10 @@ var esta_vivido: bool = true
 
 var last_direction = Vector2.DOWN
 
+# --- SONIDO DE PASOS ---
+const INTERVALO_PASOS: float = 0.35
+var _tiempo_paso: float = INTERVALO_PASOS
+
 # --- SISTEMA DE INVENTARIO ---
 enum Herramientas { NINGUNA, LLAVE_INGLESA, EXTINTOR, MULTIMETRO }
 var herramienta_activa: Herramientas = Herramientas.NINGUNA
@@ -44,15 +48,23 @@ func _physics_process(delta: float) -> void:
 	if direccion != Vector2.ZERO:
 		velocity = direccion * velocidad
 		last_direction = direccion
-		
+
 		# Control de visibilidad de spritesheets
 		sprite_walk.visible = true
 		sprite_idle.visible = false
+
+		# Sonido de pasos: suena inmediatamente al empezar a caminar y luego cada INTERVALO_PASOS
+		_tiempo_paso += delta
+		if _tiempo_paso >= INTERVALO_PASOS:
+			_tiempo_paso = 0.0
+			AudioConfig.play_sfx(AudioConfig.SFX_FOOTSTEP)
 	else:
 		velocity = Vector2.ZERO
-		
+
 		sprite_idle.visible = true
 		sprite_walk.visible = false
+
+		_tiempo_paso = INTERVALO_PASOS
 		
 	move_and_slide()
 	update_animation(direccion)
