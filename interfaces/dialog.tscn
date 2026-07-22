@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dwruhfene4ta5"]
+
+[ext_resource type="Texture2D" uid="uid://w0ynou2xjp7f" path="res://Assets/GUI/Dialog/DialogBox.png" id="1_pgp28"]
+
+[node name="Dialog" type="Control" unique_id=537243960]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2042056910]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 487.0
+offset_right = 1092.0
+offset_bottom = 616.0
+texture = ExtResource("1_pgp28")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=14912753]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 487.0
+offset_right = 1092.0
+offset_bottom = 616.0
+texture = ExtResource("1_pgp28")
