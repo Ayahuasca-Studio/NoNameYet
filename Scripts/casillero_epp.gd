@@ -30,9 +30,10 @@ func _on_body_exited(body: Node) -> void:
 
 func _input(event: InputEvent) -> void:
 	# Si el jugador está cerca y presiona la tecla de acción/interacción
-	if jugador_cerca and Input.is_action_just_pressed("recoger_epp"): 
+	if jugador_cerca and Input.is_action_just_pressed("recoger_epp"):
+		AudioConfig.play_sfx(AudioConfig.SFX_EQUIP)
 		# Equipamos al jugador usando la función
 		jugador_cerca.equipar_epp(epp_a_entregar)
-		
+
 		# Feedback visual opcional: podemos hacer que el casillero se quede vacío o cambie de color
 		print("El técnico recogió: ", nombre_item)

@@ -11,6 +11,7 @@ var tiempo_impresion: float = 0.0
 
 func _ready() -> void:
 	print(" SISTEMA DE MONITOREO ACTIVADO: Mantén el estrés de la planta bajo control.")
+	AudioConfig.play_music(AudioConfig.MUSIC_LEVEL)
 	if TransitionManager.current_spawn_point != "":
 		# Buscamos el Marker2D que coincida con ese nombre
 		var spawn_node = get_node_or_null(TransitionManager.current_spawn_point)

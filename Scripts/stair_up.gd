@@ -6,6 +6,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Jugador":
 		if next_scene != "" and target_spawn_point != "":
+			AudioConfig.play_sfx(AudioConfig.SFX_STAIRS)
 			# Enviamos la escena y el punto de aparición al Manager
 			TransitionManager.change_scene(next_scene, target_spawn_point)
 		else:

@@ -38,6 +38,7 @@ func intentar_reparar()->void:
 	var epp = jugador_en_rango.epp_equipado[epp_req]
 	
 	if epp:
+		AudioConfig.play_sfx(AudioConfig.SFX_REPAIR_SUCCESS)
 		estada_actual=Estados.Bien
 		actualizar_visualizacion()
 		print("Se reparo")
@@ -45,6 +46,7 @@ func intentar_reparar()->void:
 		if mundo and mundo.has_method("modificar_estres"):
 			mundo.modificar_estres(-25.0)
 	else:
+		AudioConfig.play_sfx(AudioConfig.SFX_REPAIR_FAIL)
 		jugador_en_rango.recibir_danio(2)
 		print("No se reparo")
 	
@@ -57,6 +59,7 @@ func _on_timer_timeout() -> void:
 	var nueva_falla = 1
 	estada_actual = nueva_falla as Estados
 	actualizar_visualizacion()
+	AudioConfig.play_sfx(AudioConfig.SFX_MACHINE_BREAK)
 	print("dañar")
 	timer.wait_time = randf_range(15.0, 20.0)
 	timer.start()

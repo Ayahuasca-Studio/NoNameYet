@@ -15,7 +15,10 @@ extends Control
 func _ready():
 	# niveles ocultos al inicio
 	menu_niveles.visible = false
-	
+
+	# Música de fondo del menú
+	AudioConfig.play_music(AudioConfig.MUSIC_MENU)
+
 	# 2. Conectar señales del menú principal
 	btn_jugar.pressed.connect(_on_btn_jugar_pressed)
 	btn_opciones.pressed.connect(_on_btn_opciones_pressed)
@@ -30,22 +33,27 @@ func _ready():
 
 
 func _on_btn_jugar_pressed():
+	AudioConfig.play_sfx(AudioConfig.SFX_CLICK)
 	# En lugar de cambiar de escena directo, mostramos el menú de niveles
 	menu_niveles.visible = true
 
 func _on_btn_opciones_pressed():
+	AudioConfig.play_sfx(AudioConfig.SFX_CLICK)
 	print("Abrir panel de opciones (pendiente de implementar)")
 
 func _on_btn_salir_principal_pressed():
+	AudioConfig.play_sfx(AudioConfig.SFX_CLICK)
 	get_tree().quit()
 
 
 # --- LÓGICA DEL MENÚ DE NIVELES ---
 
 func _on_nivel_seleccionado():
-	# Redirige a la planta baja (por ahora todos) 
+	AudioConfig.play_sfx(AudioConfig.SFX_CLICK)
+	# Redirige a la planta baja (por ahora todos)
 	get_tree().change_scene_to_file("res://Niveles/planta_baja_gameloop.tscn")
 
 func _on_btn_salir_niveles_pressed():
+	AudioConfig.play_sfx(AudioConfig.SFX_CLICK)
 	# Oculta el menú de niveles y vuelve a dejar interactuable el menú principal
 	menu_niveles.visible = false

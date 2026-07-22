@@ -41,6 +41,7 @@ func evaluar_peligro() -> void:
 		print("🛡️ Técnico seguro. Lleva el EPP adecuado para esta zona.")
 		timer_danio.stop()
 	else:
+		AudioConfig.play_sfx(AudioConfig.SFX_ALARM)
 		print("⚠️ ", mensaje_alerta)
 		# Aplicamos el primer golpe de daño inmediato y encendemos el reloj
 		jugador_en_zona.recibir_danio(danio_por_segundo)

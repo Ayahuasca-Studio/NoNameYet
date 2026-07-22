@@ -34,7 +34,8 @@ func _on_timer_timeout() -> void:
 	var nueva_falla = randi_range(1, 3)
 	estado_actual = nueva_falla as Estados
 	actualizar_visualizacion()
-	
+	AudioConfig.play_sfx(AudioConfig.SFX_MACHINE_BREAK)
+
 	timer.wait_time = randf_range(5.0, 10.0)
 	timer.start()
 
@@ -74,10 +75,11 @@ func intentar_reparar() -> void:
 		exito = true
 		
 	if exito:
+		AudioConfig.play_sfx(AudioConfig.SFX_REPAIR_SUCCESS)
 		print("¡Reparación exitosa! Máquina restaurada.")
 		estado_actual = Estados.NORMAL
 		actualizar_visualizacion()
-		
+
 		# Restamos 25 puntos de estrés acumulado al reparar con éxito
 		var mundo = owner
 		if mundo and mundo.has_method("modificar_estres"):
@@ -86,6 +88,7 @@ func intentar_reparar() -> void:
 		if estado_actual == Estados.NORMAL:
 			print("La máquina no necesita mantenimiento en este momento.")
 		else:
+			AudioConfig.play_sfx(AudioConfig.SFX_REPAIR_FAIL)
 			print("¡Herramienta incorrecta! No puedes solucionar esta falla con lo que tienes equipado.")
 
 func actualizar_visualizacion() -> void:

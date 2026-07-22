@@ -6,6 +6,7 @@ var juego_terminado: bool = false
 @onready var interfaz = $Interfaz
 
 func _ready():
+	AudioConfig.play_music(AudioConfig.MUSIC_LEVEL)
 	if TransitionManager.current_spawn_point != "":
 		# Buscamos el Marker2D que coincida con ese nombre
 		var spawn_node = get_node_or_null(TransitionManager.current_spawn_point)
