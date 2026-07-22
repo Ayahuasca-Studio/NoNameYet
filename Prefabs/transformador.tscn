@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wv1dwv7q8bv1"]
 
 [ext_resource type="Script" uid="uid://bqqqoh5j66soa" path="res://Scripts/transformador.gd" id="1_5momw"]
-[ext_resource type="Texture2D" uid="uid://eebrvwf5qhxo" path="res://Assets/Map/Furniture/retro-pixel-art-battery-icon-with-lightning-symbol-for-gaming-and-tech-illustrations-free-vector-removebg-preview.png" id="1_jseuf"]
+[ext_resource type="Texture2D" uid="uid://cu4hktllff5uw" path="res://Assets/Map/Furniture/transformador.png" id="2_5momw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
 size = Vector2(132, 132)
@@ -13,8 +13,8 @@ size = Vector2(76, 77)
 script = ExtResource("1_5momw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=328564749]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_jseuf")
+scale = Vector2(0.8641878, 1.070307)
+texture = ExtResource("2_5momw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1981759342]
 position = Vector2(1, 0)

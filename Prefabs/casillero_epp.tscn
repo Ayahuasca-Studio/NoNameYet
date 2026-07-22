@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://ietgmy0a4r6l"]
 
 [ext_resource type="Script" uid="uid://k7dy3ln37fpj" path="res://Scripts/casillero_epp.gd" id="1_6cgeh"]
-[ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="1_wiyqy"]
+[ext_resource type="Texture2D" uid="uid://crwx850cmjysg" path="res://Assets/Map/EPP/casillero/cascocasillero.png" id="2_1wymn"]
 [ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="3_043d7"]
+[ext_resource type="Texture2D" uid="uid://15x7shmqdeny" path="res://Assets/Map/EPP/casillero/audifonoscasillero.png" id="3_uu3oq"]
+[ext_resource type="Texture2D" uid="uid://igkg7cax7k73" path="res://Assets/Map/EPP/casillero/botascasillero.png" id="4_khvj7"]
+[ext_resource type="Texture2D" uid="uid://b85cd051ftg7s" path="res://Assets/Map/EPP/casillero/guantescasillero.png" id="5_hyws7"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_13qdw"]
-diffuse_texture = ExtResource("1_wiyqy")
+[sub_resource type="ImageTexture" id="ImageTexture_uu3oq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(36, 41)
@@ -14,12 +16,13 @@ size = Vector2(36, 41)
 size = Vector2(16, 28)
 
 [node name="CasilleroEPP" type="Area2D" unique_id=922661653]
+scale = Vector2(1.6800001, 1)
 script = ExtResource("1_6cgeh")
+imagenes_casillero = Array[Texture2D]([ExtResource("2_1wymn"), ExtResource("3_uu3oq"), ExtResource("4_khvj7"), ExtResource("5_hyws7")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=328285498]
 texture_filter = 1
-texture = SubResource("CanvasTexture_13qdw")
-region_enabled = true
+texture = SubResource("ImageTexture_uu3oq")
 region_rect = Rect2(64, 336, 16, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=403228781]
@@ -27,10 +30,11 @@ position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_xrivr")
 
 [node name="IndicadorCasillero" type="Label" parent="." unique_id=984108870]
-offset_left = -52.0
-offset_top = -41.0
-offset_right = 53.0
-offset_bottom = -17.0
+offset_left = -40.47619
+offset_top = -42.0
+offset_right = 64.52381
+offset_bottom = -18.0
+scale = Vector2(0.7619055, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_043d7")
 theme_override_font_sizes/font_size = 16

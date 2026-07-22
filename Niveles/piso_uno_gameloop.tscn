@@ -3004,9 +3004,6 @@ position = Vector2(-127, -211)
 [node name="Maquina2" parent="." unique_id=1811259703 instance=ExtResource("5_jojke")]
 position = Vector2(61, -6)
 
-[node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("6_toyu6")]
-position = Vector2(11, -105)
-
 [node name="Interfaz" parent="." unique_id=1390139656 instance=ExtResource("7_toyu6")]
 
 [node name="ZonaRiesgo" parent="." unique_id=2044102159 instance=ExtResource("8_ns4f3")]
@@ -3034,5 +3031,8 @@ position = Vector2(-129, -124)
 position = Vector2(-65, -21)
 epp_a_entregar = 2
 nombre_item = "Botas"
+
+[node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("6_toyu6")]
+position = Vector2(11, -105)
 
 [connection signal="body_entered" from="StairUp" to="StairUp" method="_on_body_entered"]
