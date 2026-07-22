@@ -18,7 +18,6 @@ func _on_sound_button_toggled(is_pressed: bool) -> void:
 	# Reproducimos el click ANTES de aplicar el posible mute, para que siempre se escuche
 	AudioConfig.play_sfx(AudioConfig.SFX_CLICK)
 
-	 Sounds-&-Effects
 	# Actualiza el estado global y silencia el juego
 	AudioConfig.set_sound(sound_state)
 	print("Sonido configurado en: ", sound_state)

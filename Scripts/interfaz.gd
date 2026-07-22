@@ -12,6 +12,8 @@ extends CanvasLayer
 @onready var barra_estres = $HUD/BarraEstres
 @onready var icono_herramienta = $HUD/IconoHerramienta
 
+@onready var label_tiempo_barrera: Label = $HUD/LabelTiempoBarrera
+
 # Definimos las coordenadas (Rect2) de cada herramienta en el atlas
 var regiones = {
 	"NINGUNA": Rect2(0, 0, 0, 0), # Vacío
@@ -22,6 +24,10 @@ var regiones = {
 
 func _ready() -> void:
 	cambiar_icono_herramienta("NINGUNA")
+	if label_tiempo_barrera:
+		label_tiempo_barrera.visible = false
+	# Importante: Añadir la interfaz al grupo para que la barrera la encuentre
+	add_to_group("interfaz")
 	
 	
 func actualizar_estres(valor: float) -> void:
@@ -56,3 +62,14 @@ func actualizar_ranuras_epp(epp_estado: Dictionary) -> void:
 		
 	if icono_botas:
 		icono_botas.modulate = Color(1, 1, 1, 1) if epp_estado[2] else Color(0.3, 0.3, 0.3, 0.5)
+		
+
+# Nueva función para que la barrera mande el tiempo
+func actualizar_tiempo_barrera(segundos: float) -> void:
+	if label_tiempo_barrera:
+		if segundos > 0:
+			label_tiempo_barrera.visible = true
+			# Usamos string formatting para redondear el float a entero
+			label_tiempo_barrera.text = "⏱️ PB Restringida: %d s" % int(segundos)
+		else:
+			label_tiempo_barrera.visible = false

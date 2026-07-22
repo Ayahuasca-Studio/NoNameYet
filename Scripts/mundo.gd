@@ -68,4 +68,4 @@ func derrota_juego() -> void:
 	print("El sabotaje del mentor destruyó los servidores principales de la planta.")
 	print("El nivel de estrés superó el 100%. El sistema colapsó.")
 	# Pausamos el juego por completo para detener los movimientos
-	get_tree().paused = true
+	get_tree().change_scene_to_file("res://interfaces/game_over.tscn")

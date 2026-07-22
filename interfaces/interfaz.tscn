@@ -112,3 +112,14 @@ layout_mode = 2
 texture = ExtResource("4_w8172")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="LabelTiempoBarrera" type="Label" parent="HUD" unique_id=1325156990]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.0
+offset_top = 42.0
+offset_right = -26.0
+offset_bottom = 65.0
+grow_horizontal = 2

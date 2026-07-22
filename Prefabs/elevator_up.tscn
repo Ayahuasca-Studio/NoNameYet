@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b4cyxfcubli64"]
+
+[ext_resource type="Script" uid="uid://ieyn360usna7" path="res://Scripts/elevator.gd" id="1_3enp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+
+[node name="ElevatorUp" type="Area2D" unique_id=613870582]
+script = ExtResource("1_3enp0")
+next_scene = "res://Niveles/piso_dod_gameloop.tscn"
+target_spawn_point = "SpawnElevator"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1241574261]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("RectangleShape2D_xrivr")
+debug_color = Color(0.37708285, 0.6134608, 0.08113178, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

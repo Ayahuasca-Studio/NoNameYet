@@ -3,7 +3,8 @@ extends Area2D
 # Enums idénticos para coordinar estados y herramientas
 enum Estados { NORMAL, ROTA, INCENDIO, SOBRECARGA }
 var estado_actual: Estados = Estados.NORMAL
-
+@export var minTime:float = 5.0
+@export var maxTime:float = 10.0
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var timer: Timer = $Timer
 

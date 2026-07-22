@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cpvgpoeabsi2o" path="res://Prefabs/zona_riesgo.tscn" id="8_ns4f3"]
 [ext_resource type="Script" uid="uid://dkagnituqcf0u" path="res://Scripts/stair_up.gd" id="9_4yg13"]
 [ext_resource type="PackedScene" uid="uid://ietgmy0a4r6l" path="res://Prefabs/casillero_epp.tscn" id="10_bn1sp"]
+[ext_resource type="PackedScene" uid="uid://b8nc8iov7nfqf" path="res://Prefabs/barrera_escalera.tscn" id="11_tmm2b"]
+[ext_resource type="PackedScene" uid="uid://b4cyxfcubli64" path="res://Prefabs/elevator_up.tscn" id="12_6ek1d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1uv6g"]
 texture = ExtResource("1_ifyin")
@@ -3034,5 +3036,12 @@ nombre_item = "Botas"
 
 [node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("6_toyu6")]
 position = Vector2(11, -105)
+
+[node name="BarreraEscalera" parent="." unique_id=369001316 instance=ExtResource("11_tmm2b")]
+position = Vector2(136, -224)
+rotation = 1.5707964
+
+[node name="ElevatorUp" parent="." unique_id=613870582 instance=ExtResource("12_6ek1d")]
+position = Vector2(177, -223)
 
 [connection signal="body_entered" from="StairUp" to="StairUp" method="_on_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b8nc8iov7nfqf"]
+
+[ext_resource type="Texture2D" uid="uid://cvupujnsa6rue" path="res://Assets/Map/Furniture/barrera.jpg" id="1_3ukf5"]
+[ext_resource type="Script" uid="uid://d34ha8c0uhvou" path="res://Scripts/barrera_escalera.gd" id="1_24xn1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(32, 16)
+
+[node name="BarreraEscalera" type="StaticBody2D" unique_id=369001316]
+script = ExtResource("1_24xn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1957647250]
+texture_filter = 1
+texture = ExtResource("1_3ukf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=518720375]
+shape = SubResource("RectangleShape2D_xrivr")
+debug_color = Color(0.99955875, 0, 0.12362098, 0.41960785)
+
+[node name="TimerApertura" type="Timer" parent="." unique_id=546098413]
