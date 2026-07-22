@@ -114,7 +114,9 @@ func actualizar_ui_herramienta() -> void:
 func recibir_danio(cantidad: float) -> void:
 	if not esta_vivido:
 		return
-		
+
+	AudioConfig.play_sfx(AudioConfig.SFX_HURT)
+
 	# Restamos vida y nos aseguramos de que no baje de 0 ni suba de 100
 	salud_actual = clampf(salud_actual - cantidad, 0.0, salud_max)
 	

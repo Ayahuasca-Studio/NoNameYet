@@ -19,6 +19,7 @@ func _input(event: InputEvent) -> void:
 	if !maquina:
 		return
 	if jugador_dentro != null and Input.is_action_just_pressed("ui_accept"):
+		AudioConfig.play_sfx(AudioConfig.SFX_SWITCH)
 		maquina.cambioControl()
 		cambiarTexto()
 	

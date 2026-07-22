@@ -1,0 +1,14 @@
+Créditos de audio (todos CC0 - Creative Commons Zero, uso libre sin atribución obligatoria)
+
+click.wav           - Kenney UI Audio Pack (kenney.nl) - click1.wav
+game_over.wav       - Kenney Interface Sounds Pack (kenney.nl) - error_002.wav
+level_music.ogg     - Kenney Starter Kit: City Builder (kenney.nl) - ambience.ogg
+menu_music.ogg      - "Ancient Heavy Tech Donjon" por Komiku (CC0, via Free Music Archive)
+repair_success.wav  - Kenney Interface Sounds Pack (kenney.nl) - confirmation_001.wav
+repair_fail.wav     - Kenney Interface Sounds Pack (kenney.nl) - error_001.wav
+equip.wav           - Kenney Interface Sounds Pack (kenney.nl) - select_002.wav
+switch.wav          - Kenney UI Audio Pack (kenney.nl) - switch1.wav
+alarm.ogg           - Kenney Digital Audio Pack (kenney.nl) - two_tone_2.ogg
+hurt.ogg            - Kenney Digital Audio Pack (kenney.nl) - zap_1.ogg
+machine_break.ogg   - Kenney Digital Audio Pack (kenney.nl) - low_down.ogg
+stairs.ogg          - Kenney Impact Sounds Pack (kenney.nl) - 3 footsteps de concreto combinados
