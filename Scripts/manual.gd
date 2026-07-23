@@ -3,6 +3,7 @@ extends Control
 @onready var anim_player = $AnimationPlayer
 @onready var page_container = $PageContainer
 @onready var interaction = $Interaction
+@onready var exit_button = $Exit 
 
 var indice_actual = 0
 var esta_animando = false
@@ -11,6 +12,12 @@ var paginas = []
 var botones = []
 
 func _ready():
+	# Permitir que este nodo funcione aunque el árbol de la escena esté pausado
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
+	# Conectar el botón de salida por código
+	exit_button.pressed.connect(_on_exit_pressed)
+
 	# 1. Guardar todas las páginas en orden y ocultarlas excepto la primera
 	for i in page_container.get_child_count():
 		var pagina = page_container.get_child(i)
@@ -23,6 +30,30 @@ func _ready():
 		botones.append(boton)
 		# Conectamos el click del botón a nuestra función, pasándole su número de índice (0, 1, 2...)
 		boton.pressed.connect(cambiar_pagina.bind(i))
+
+
+# --- CONTROL DE SALIDA Y PAUSA ---
+
+func _on_exit_pressed():
+	# Ocultamos el nodo padre (Guide) para que se quite el Manual Y el ColorRect (fondo negro).
+	# Al ocultarse, se ejecutará automáticamente _notification y el juego se despausará.
+	get_parent().hide()
+
+func _notification(what):
+	if what == NOTIFICATION_VISIBILITY_CHANGED:
+		# Verificamos que el nodo esté listo y que el SceneTree exista antes de pausar/despausar
+		var tree = get_tree()
+		if is_node_ready() and tree != null:
+			tree.paused = is_visible_in_tree()
+
+func _exit_tree():
+	# Seguro de limpieza por si cambias de escena abruptamente
+	var tree = get_tree()
+	if tree != null:
+		tree.paused = false
+
+
+# --- LÓGICA DE PÁGINAS ---
 
 # La función maestra que se ejecuta al presionar CUALQUIER botón de marcador
 func cambiar_pagina(indice_destino):

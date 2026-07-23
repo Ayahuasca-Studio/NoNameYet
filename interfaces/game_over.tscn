@@ -31,6 +31,15 @@ grow_vertical = 2
 texture = ExtResource("1_qtk0t")
 expand_mode = 1
 
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1674984244]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.43137255)
+
 [node name="TextureButton" type="TextureButton" parent="Control" unique_id=2032878842]
 layout_mode = 1
 anchors_preset = 8

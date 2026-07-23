@@ -118,6 +118,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_83y8a")
 
+[node name="Exit" type="Button" parent="Manual" unique_id=937231210]
+layout_mode = 0
+offset_left = 1073.0
+offset_top = 17.0
+offset_right = 1135.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("1_4mqed")
+theme_override_font_sizes/font_size = 49
+text = "x"
+
 [node name="Interaction" type="TextureRect" parent="Manual" unique_id=976761610]
 layout_mode = 0
 offset_left = 613.0
