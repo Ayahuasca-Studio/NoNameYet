@@ -11,6 +11,9 @@ var estado_actual: Estados = Estados.NORMAL
 # VARIABLE: Guarda si el jugador está dentro del rango de la máquina
 var jugador_en_rango: Node2D = null
 
+# --- NUEVO: Puntos que puedes configurar en el Inspector ---
+@export var puntos_ganados: int = 150
+
 # --- Funcion: Se llama solo una vez al iniciar la escena ---
 func _ready() -> void:
 	# Configuracion  del timer
@@ -80,6 +83,9 @@ func intentar_reparar() -> void:
 		print("¡Reparación exitosa! Máquina restaurada.")
 		estado_actual = Estados.NORMAL
 		actualizar_visualizacion()
+		
+		# --- AQUÍ SUMAMOS LOS PUNTOS AL REPARAR ---
+		get_tree().call_group("score_manager", "sumar_puntos", puntos_ganados)
 
 		# Restamos 25 puntos de estrés acumulado al reparar con éxito
 		var mundo = owner
@@ -98,13 +104,13 @@ func actualizar_visualizacion() -> void:
 			sprite.modulate = Color.WHITE
 			print("Máquina operando con normalidad.")
 		Estados.ROTA:
-			sprite.modulate = Color.BROWN
+			sprite.modulate = Color.YELLOW
 			print("¡ALERTA! Se requiere Llave Inglesa (Tecla 1).")
 		Estados.INCENDIO:
 			sprite.modulate = Color.RED
 			print("¡ALERTA! Se requiere Extintor (Tecla 2).")
 		Estados.SOBRECARGA:
-			sprite.modulate = Color.YELLOW
+			sprite.modulate = Color.BLUE
 			print("¡ALERTA! Se requiere Multímetro (Tecla 3).")
 
 # _process corre en cada frame de renderizado. 

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d1wkvovegjltq"]
 
 [ext_resource type="VideoStream" uid="uid://p7e3ko578q1x" path="res://Assets/Cinematics/Escena_3.ogv" id="1_76qg3"]
+[ext_resource type="Script" uid="uid://c4a7bhkrghf8u" path="res://Scripts/cinematic.gd" id="1_604ef"]
 [ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="2_ksyvm"]
 
 [node name="Cinematic3" type="Control" unique_id=660002203]
@@ -10,6 +11,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_604ef")
+siguiente_escena = "uid://crtmjfih38tj2"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1922763443]
 layout_mode = 1

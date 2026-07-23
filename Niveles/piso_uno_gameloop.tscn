@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ietgmy0a4r6l" path="res://Prefabs/casillero_epp.tscn" id="10_bn1sp"]
 [ext_resource type="PackedScene" uid="uid://b8nc8iov7nfqf" path="res://Prefabs/barrera_escalera.tscn" id="11_tmm2b"]
 [ext_resource type="PackedScene" uid="uid://b4cyxfcubli64" path="res://Prefabs/elevator_up.tscn" id="12_6ek1d"]
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="13_g35st"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1uv6g"]
 texture = ExtResource("1_ifyin")
@@ -3002,9 +3003,11 @@ collision_visibility_mode = 2
 
 [node name="Maquina" parent="." unique_id=899099243 instance=ExtResource("5_jojke")]
 position = Vector2(-127, -211)
+puntos_ganados = 30
 
 [node name="Maquina2" parent="." unique_id=1811259703 instance=ExtResource("5_jojke")]
 position = Vector2(61, -6)
+puntos_ganados = 30
 
 [node name="Interfaz" parent="." unique_id=1390139656 instance=ExtResource("7_toyu6")]
 
@@ -3030,18 +3033,45 @@ position = Vector2(176, -143)
 position = Vector2(-129, -124)
 
 [node name="CasilleroEPP2" parent="." unique_id=1215365457 instance=ExtResource("10_bn1sp")]
-position = Vector2(-65, -21)
+position = Vector2(-254, -101)
 epp_a_entregar = 2
 nombre_item = "Botas"
 
-[node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("6_toyu6")]
-position = Vector2(11, -105)
-
-[node name="BarreraEscalera" parent="." unique_id=369001316 instance=ExtResource("11_tmm2b")]
+[node name="BarreraEscalera" parent="." unique_id=369001316 node_paths=PackedStringArray("label_noticia") instance=ExtResource("11_tmm2b")]
 position = Vector2(136, -224)
 rotation = 1.5707964
+puntos_necesarios = 30
+label_noticia = NodePath("../Label/Jugador/Noticia")
 
 [node name="ElevatorUp" parent="." unique_id=613870582 instance=ExtResource("12_6ek1d")]
 position = Vector2(177, -223)
+next_scene = "uid://dwqdhk7fjfeey"
+
+[node name="Label" type="Label" parent="." unique_id=370676538]
+offset_left = 149.0
+offset_top = -233.0
+offset_right = 288.0
+offset_bottom = -209.0
+scale = Vector2(0.39055285, 0.6189565)
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("13_g35st")
+text = "Siguiente Nivel"
+
+[node name="Jugador" parent="Label" unique_id=1844464217 instance=ExtResource("6_toyu6")]
+position = Vector2(-353.34528, 206.79968)
+scale = Vector2(2.560473, 1.6156224)
+
+[node name="Noticia" type="Label" parent="Label/Jugador" unique_id=356607255]
+visible = false
+offset_left = -154.0
+offset_top = -105.0
+offset_right = 312.0
+offset_bottom = -54.0
+scale = Vector2(0.69, 0.69)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("13_g35st")
+text = "Los accidentes han aumentado desde tu llegada
+¡Administración cree que eres el culpable!!!!"
 
 [connection signal="body_entered" from="StairUp" to="StairUp" method="_on_body_entered"]

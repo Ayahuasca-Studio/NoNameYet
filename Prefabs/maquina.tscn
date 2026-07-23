@@ -11,6 +11,7 @@ size = Vector2(31, 35)
 
 [node name="Maquina" type="Area2D" unique_id=899099243]
 script = ExtResource("1_xss06")
+puntos_ganados = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=794194822]
 scale = Vector2(0.41719273, 0.43597656)

@@ -32,6 +32,10 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nlkkf")
+escena_opciones = "uid://hqcxiv2ruyqm"
+escena_nivel_1 = "uid://0rle4x5qtwbf"
+escena_nivel_2 = "uid://4h6pi1agd28h"
+escena_nivel_3 = "uid://d1wkvovegjltq"
 
 [node name="Background" type="TextureRect" parent="." unique_id=2004249523]
 layout_mode = 1
