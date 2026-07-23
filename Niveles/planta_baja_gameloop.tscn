@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="6_0gn7i"]
 [ext_resource type="Script" uid="uid://dkagnituqcf0u" path="res://Scripts/stair_up.gd" id="6_bgxpg"]
 [ext_resource type="PackedScene" uid="uid://bph2wnl2j0so2" path="res://Prefabs/boiler.tscn" id="7_4iy28"]
+[ext_resource type="PackedScene" uid="uid://bg3frsk4bdool" path="res://Prefabs/manual.tscn" id="7_kpph1"]
 [ext_resource type="PackedScene" uid="uid://1bnos5p26itf" path="res://Prefabs/control.tscn" id="8_fpmlx"]
 [ext_resource type="PackedScene" uid="uid://ietgmy0a4r6l" path="res://Prefabs/casillero_epp.tscn" id="9_1byjf"]
 [ext_resource type="PackedScene" uid="uid://cg2naxywjdauc" path="res://interfaces/interfaz.tscn" id="10_6rx4i"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cpvgpoeabsi2o" path="res://Prefabs/zona_riesgo.tscn" id="12_bgxpg"]
 [ext_resource type="PackedScene" uid="uid://b8nc8iov7nfqf" path="res://Prefabs/barrera_escalera.tscn" id="13_4iy28"]
 [ext_resource type="PackedScene" uid="uid://qwjyqalde1yc" path="res://Prefabs/cleaner.tscn" id="13_sk5cb"]
+[ext_resource type="PackedScene" uid="uid://cp4j6lol5k0y8" path="res://interfaces/guide.tscn" id="17_64as6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i1e1l"]
 texture = ExtResource("2_fpmlx")
@@ -3041,6 +3043,10 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("6_0gn7i")
 text = "Siguiente Nivel"
 
+[node name="Manual" parent="." unique_id=922661653 node_paths=PackedStringArray("manual_canvas") instance=ExtResource("7_kpph1")]
+position = Vector2(194, 95)
+manual_canvas = NodePath("../Guide")
+
 [node name="SpawnStairs" type="Marker2D" parent="." unique_id=1555238953]
 position = Vector2(176, -143)
 
@@ -3057,7 +3063,7 @@ maquina = NodePath("../Transformador")
 
 [node name="Interfaz" parent="." unique_id=1390139656 instance=ExtResource("10_6rx4i")]
 
-[node name="CasilleroEPP" parent="." unique_id=922661653 instance=ExtResource("9_1byjf")]
+[node name="CasilleroEPP" parent="." unique_id=244155862 instance=ExtResource("9_1byjf")]
 position = Vector2(-234, -243)
 epp_a_entregar = 1
 nombre_item = "Guantes"
@@ -3073,6 +3079,7 @@ nombre_item = "Casco"
 
 [node name="Transformador" parent="." unique_id=323665234 instance=ExtResource("11_qrb6p")]
 position = Vector2(-315, -17)
+puntos_ganados = 20
 
 [node name="ZonaRiesgo-Transformador" parent="." unique_id=2044102159 instance=ExtResource("12_bgxpg")]
 position = Vector2(-401.99997, -22)
@@ -3095,5 +3102,8 @@ scale = Vector2(1.0715157, 0.37362662)
 
 [node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("5_qrb6p")]
 position = Vector2(354, 84)
+
+[node name="Guide" parent="." unique_id=2012251856 instance=ExtResource("17_64as6")]
+visible = false
 
 [connection signal="body_entered" from="Stairs" to="Stairs" method="_on_body_entered"]

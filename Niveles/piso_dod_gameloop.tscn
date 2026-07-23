@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cg2naxywjdauc" path="res://interfaces/interfaz.tscn" id="6_uf8ot"]
 [ext_resource type="PackedScene" uid="uid://cpvgpoeabsi2o" path="res://Prefabs/zona_riesgo.tscn" id="7_6vqk6"]
 [ext_resource type="PackedScene" uid="uid://ietgmy0a4r6l" path="res://Prefabs/casillero_epp.tscn" id="9_iu83h"]
+[ext_resource type="PackedScene" uid="uid://bg3frsk4bdool" path="res://Prefabs/manual.tscn" id="9_y7vw7"]
 [ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://Prefabs/jugador.tscn" id="10_2cq6d"]
+[ext_resource type="PackedScene" uid="uid://cp4j6lol5k0y8" path="res://interfaces/guide.tscn" id="11_gcc6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1uv6g"]
 texture = ExtResource("2_y7vw7")
@@ -3030,5 +3032,12 @@ position = Vector2(-288.00003, -66)
 epp_a_entregar = 2
 nombre_item = "Botas"
 
+[node name="Manual" parent="." unique_id=1023897802 node_paths=PackedStringArray("manual_canvas") instance=ExtResource("9_y7vw7")]
+position = Vector2(-128, 96)
+manual_canvas = NodePath("../Guide")
+
 [node name="Jugador" parent="." unique_id=1844464217 instance=ExtResource("10_2cq6d")]
 position = Vector2(11, -105)
+
+[node name="Guide" parent="." unique_id=2012251856 instance=ExtResource("11_gcc6b")]
+visible = false

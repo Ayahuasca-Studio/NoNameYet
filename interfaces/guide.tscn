@@ -217,18 +217,55 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Controles" unique_id=1097233226]
+[node name="Title2" type="RichTextLabel" parent="Manual/PageContainer/Controles" unique_id=1806094620]
 layout_mode = 0
-offset_left = 339.99997
-offset_top = 106.99999
-offset_right = 490.83884
-offset_bottom = 146.69516
+offset_left = 253.0
+offset_top = 132.0
+offset_right = 567.9775
+offset_bottom = 453.53394
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
-text = " Controles
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_italics_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+bbcode_enabled = true
+text = "[center][b]EQUIPO DE PROTECCIÓN PERSONAL (EPP)[/b][/center]
+
+[table=3]
+[cell][img=80]res://Assets/Map/EPP/casillero/cascocasillero.png[/img][/cell]
+[cell]  [b]-->[/b]  [/cell]
+[cell][img=48]res://Assets/Map/EPP/casco.png[/img] [b]Casco de Seguridad[/b][/cell]
+
+[cell][img=80]res://Assets/Map/EPP/casillero/botascasillero.png[/img][/cell]
+[cell]  [b]-->[/b]  [/cell]
+[cell][img=48]res://Assets/Map/EPP/boots.png[/img] [b]Botas Dieléctricas[/b][/cell]
+
+[cell][img=80]res://Assets/Map/EPP/casillero/guantescasillero.png[/img][/cell]
+[cell]  [b]-->[/b]  [/cell]
+[cell][img=48]res://Assets/Map/EPP/guantes.png[/img] [b]Guantes Aislantes[/b][/cell]
+[/table]
 "
+
+[node name="Title3" type="RichTextLabel" parent="Manual/PageContainer/Controles" unique_id=416008814]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 141.0
+offset_right = 932.45026
+offset_bottom = 455.1833
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+bbcode_enabled = true
+text = "[color=orange][b]⚠️ ADVERTENCIA DE SEGURIDAD:[/b][/color]
+[i]Al abandonar cualquier área restringida o cuarto técnico que requiera equipo de protección, deberás [b]desequipar el EPP[/b] antes de continuar a otras zonas.[/i]
+
+[color=yellow][b]🎮 CONTROL DE INTERACCIÓN:[/b][/color]
+[i]Para usar un casillero y equipar los ítems, acércate y presiona la tecla [b][E][/b].[/i]"
 
 [node name="Information" type="Control" parent="Manual/PageContainer" unique_id=856612444]
 visible = false
@@ -238,15 +275,54 @@ offset_bottom = 40.0
 
 [node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Information" unique_id=518001960]
 layout_mode = 0
-offset_left = 346.0
-offset_top = 117.0
-offset_right = 496.83887
-offset_bottom = 156.69516
+offset_left = 235.0
+offset_top = 103.99999
+offset_right = 579.3959
+offset_bottom = 622.811
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
-text = "Información"
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_italics_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+theme_override_fonts/mono_font = ExtResource("1_4mqed")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center][b]INFORMACIÓN DE LA PLANTA[/b][/center]
+
+[color=yellow][b]🎮 OBJETIVO DEL NIVEL:[/b][/color]
+Una vez superes los [b]100 puntos[/b], dirígete hacia las escaleras o ascensor para pasar al [color=yellow]\"Siguiente Nivel\"[/color].
+
+[color=orange][b]LIBRERÍAS / MANUALES:[/b][/color]
+Son lugares donde puedes consultar los procesos paso a paso para solucionar un problema específico de las máquinas.
+[i]Acércate a una librería y presiona la tecla [b][E][/b] para consultar la documentación técnica.[/i]"
+
+[node name="Instruction2" type="RichTextLabel" parent="Manual/PageContainer/Information" unique_id=469650589]
+layout_mode = 0
+offset_left = 611.99994
+offset_top = 112.00001
+offset_right = 956.3958
+offset_bottom = 630.811
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_italics_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+theme_override_fonts/mono_font = ExtResource("1_4mqed")
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[center][b]RIESGOS Y MANTENIMIENTO[/b][/center]
+
+[color=red][b]⚡ ESTRÉS DE LA PLANTA:[/b][/color]
+Mientras las máquinas se encuentren dañadas o fuera de servicio, el [b]estrés general de la planta aumentará constantemente[/b]. ¡Repáralas cuanto antes para evitar un colapso!
+
+[color=orange][b]⚠️ EQUIPO DE PROTECCIÓN (EPP):[/b][/color]
+[i]Nunca intentes realizar un proceso sin el equipo adecuado:[/i]
+• Sin EPP el sistema [b]no te permitirá realizar la reparación[/b].
+• En el peor de los casos, te ocasionará [color=red][b]daño a la salud[/b][/color]."
 
 [node name="Mapa" type="Control" parent="Manual/PageContainer" unique_id=1690621858]
 visible = false
@@ -256,17 +332,44 @@ offset_bottom = 40.0
 
 [node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Mapa" unique_id=1662584076]
 layout_mode = 0
-offset_left = 369.99997
-offset_top = 112.99999
-offset_right = 432.08206
-offset_bottom = 152.69516
+offset_left = 237.0
+offset_top = 102.99999
+offset_right = 575.3383
+offset_bottom = 542.3417
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
-text = " Mapa"
+bbcode_enabled = true
+text = "[center][b]MAPA DE LA PLANTA[/b][/center]
+[b]PLANTA BAJA:[/b]
+[center][img=300]res://Assets/Map/PB.png[/img][/center]
+[b]PISO UNO:[/b]
+[center][img=300]res://Assets/Map/P1.png[/img][/center]
+
+"
+
+[node name="Instruction2" type="RichTextLabel" parent="Manual/PageContainer/Mapa" unique_id=534753748]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 123.0
+offset_right = 954.3383
+offset_bottom = 562.3417
+rotation = 0.002947845
+theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("1_4mqed")
+bbcode_enabled = true
+text = "[center][b]RECOMENDACIONES Y PROTOCOLOS[/b][/center]
+
+[color=red][b]⚠️ ACCESO A ÁREAS DE RIESGO:[/b][/color]
+Ten cuidado a los cuartos que entras. [b]Puedes hacerte daño a la vida[/b] si no llevas la protección adecuada ([i]EPP[/i]) al ingresar.
+
+[color=yellow][b]⚡ PLANTA BAJA (REPARACIÓN):[/b][/color]
+En la Planta Baja existen máquinas que [b]primero debes apagar desde su panel de control[/b] para poder arreglarlas con seguridad."
 
 [node name="Fire" type="Control" parent="Manual/PageContainer" unique_id=993719827]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -302,39 +405,52 @@ theme_override_font_sizes/normal_font_size = 17
 text = "Incendio"
 
 [node name="Server" type="Control" parent="Manual/PageContainer" unique_id=606954892]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Server" unique_id=1972765092]
 layout_mode = 0
-offset_left = 609.0
-offset_top = 272.99997
-offset_right = 959.8521
-offset_bottom = 514.6956
+offset_left = 614.00006
+offset_top = 131.0
+offset_right = 964.8522
+offset_bottom = 671.3669
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
-text = " INSTRUCCIONES
-  1. Pedir tarjeta de acceso al  jefe (Of_1)
- 2. Tomar refrigerante líquido (Store)
- 3. Aplicar refrigerante y reiniciar Servidor (Protected area)
- 5. Confirmar Reinicio con Jefe (of_1)"
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[b]ASIGNACIÓN DE HERRAMIENTAS:[/b]
+• [color=yellow][b][1][/b][/color] [b]Llave Inglesa[/b]  --->  Daño Mecánico
+• [color=red][b][2][/b][/color] [b]Extintor[/b]  --->  Fuego / Incendio
+• [color=cyan][b][3][/b][/color] [b]Multímetro[/b]  --->  Sobrecarga Eléctrica
+[color=yellow][b]⚠️ CONDICIONES DE EPP:[/b][/color]
+No necesitas equipo para reparar las máquinas, [b]A MENOS[/b] que se encuentren dentro del [b]Área de Prensas[/b].
+[center][img=96]res://Assets/Map/cuarto casco.png[/img][/center]
+En dicha zona es [b]obligatorio[/b] llevar equipado el [color=yellow][b]Casco de Seguridad[/b][/color]:
+[center][img=32]res://Assets/Map/EPP/casco.png[/img][/center]"
 
 [node name="Title" type="RichTextLabel" parent="Manual/PageContainer/Server" unique_id=1884472172]
 layout_mode = 0
-offset_left = 270.0
-offset_top = 110.99999
-offset_right = 574.1688
-offset_bottom = 161.03357
+offset_left = 262.0
+offset_top = 108.0
+offset_right = 566.1688
+offset_bottom = 515.86316
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5578324, 0.46098202, 0.17176595, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
 theme_override_font_sizes/normal_font_size = 17
-text = "Sobrecalentamiento del  servidor "
+bbcode_enabled = true
+text = "[center][b]ARREGLAR MÁQUINAS[/b][/center]
+[center][img=128]res://Assets/Map/Floor/machine.png[/img][/center]
+
+Dependiendo del color de la máquina, se indica el tipo de reparación necesaria:
+
+• [color=red][b]Rojo[/b][/color]  ->  [b]Incendio / Fuego[/b]
+• [color=cyan][b]Azul[/b][/color]  ->  [b]Sobrecarga Eléctrica[/b]
+• [color=yellow][b]Amarillo[/b][/color]  ->  [b]Daño Mecánico[/b]"
 
 [node name="Boiler" type="Control" parent="Manual/PageContainer" unique_id=1568578707]
 visible = false

@@ -3089,7 +3089,6 @@ texture_region_size = Vector2i(12, 20)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.2590103, -5.935337, 2.877739, -5.3957615, 2.877739, -0.71943474, -1.4388695, -0.71943474)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gq3bm"]
-load_path = "res://.godot/imported/machine2_cable.png-31b3f129eaf8a67b3f8b7790b0bf211c.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vsrti"]
 texture = SubResource("CompressedTexture2D_gq3bm")
@@ -3118,7 +3117,6 @@ texture_region_size = Vector2i(16, 20)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.2374573, 3.5971756, 3.4173164, 3.5971756, 5.036045, 4.6763268, 4.4964676, 8, -3.2374573, 8, -5.2159033, 4.856186)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qp0jp"]
-load_path = "res://.godot/imported/barrel_03.png-9be46d0ef3022b4915d1a6f9877e6306.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tem2"]
 texture = SubResource("CompressedTexture2D_qp0jp")
@@ -3143,7 +3141,6 @@ texture = ExtResource("13_ejc27")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1nkdw"]
-load_path = "res://.godot/imported/pot_4.png-c748c06d9271aaaa989821c936f524c1.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hi43d"]
 texture = SubResource("CompressedTexture2D_1nkdw")
@@ -3152,7 +3149,6 @@ texture_region_size = Vector2i(16, 19)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.7770338, 3.4173164, 3.7770329, 3.2374573, 4.136751, 8, -3.2374573, 8)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evesr"]
-load_path = "res://.godot/imported/pot_02.png-626d76939d8466a28411077613868739.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q52ip"]
 texture = SubResource("CompressedTexture2D_evesr")
@@ -3160,7 +3156,6 @@ texture = SubResource("CompressedTexture2D_evesr")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.7770338, 1.978447, 2.5180225, 1.978447, 5.036045, 2.8777409, 3.4173164, 6.2950554, -3.4173155, 6.4749146, -4.6763268, 3.7770348)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mgw54"]
-load_path = "res://.godot/imported/pot_11.png-977999686ea35229bc4f18ec059dbaad.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nh7ff"]
 texture = SubResource("CompressedTexture2D_mgw54")

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bg3frsk4bdool"]
+
+[ext_resource type="Texture2D" uid="uid://mty45ut32qiu" path="res://Assets/Map/Furniture/librero.png" id="1_h4j2h"]
+[ext_resource type="Script" uid="uid://dtw387ph0xnw7" path="res://Scripts/library.gd" id="1_lnsf3"]
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="2_lnsf3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(36, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
+size = Vector2(16, 28)
+
+[node name="Manual" type="Area2D" unique_id=922661653]
+scale = Vector2(1.6800001, 1)
+script = ExtResource("1_lnsf3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=328285498]
+texture_filter = 1
+position = Vector2(-5.9604645e-08, 2)
+scale = Vector2(0.02789047, 0.050539237)
+texture = ExtResource("1_h4j2h")
+region_rect = Rect2(64, 336, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=403228781]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="IndicadorCasillero" type="Label" parent="." unique_id=984108870]
+offset_left = -26.190475
+offset_top = -37.0
+offset_right = 78.809525
+offset_bottom = -13.0
+scale = Vector2(0.49154666, 0.7586842)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_lnsf3")
+theme_override_font_sizes/font_size = 16
+text = "Presiona E"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=820032490]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1650352186]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_13qdw")
+debug_color = Color(0.99260134, 0, 0.25617582, 0.41960785)
