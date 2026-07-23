@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bkxt16mi45pq8" path="res://Scripts/jugador.gd" id="1_omvyu"]
 [ext_resource type="Texture2D" uid="uid://r0ixjbq0dsn6" path="res://Assets/Personaje/Técnicoidle.png" id="2_8o684"]
 [ext_resource type="Texture2D" uid="uid://bpjutmbiqhr4r" path="res://Assets/Personaje/Walk_Technician.png" id="3_ukil5"]
+[ext_resource type="PackedScene" uid="uid://b0t126fr4tk3j" path="res://Prefabs/score.tscn" id="4_du5bo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(13, 5)
@@ -215,3 +216,10 @@ limit_top = -271
 limit_right = 415
 limit_bottom = 111
 position_smoothing_speed = 4.0
+
+[node name="Score" parent="Camera2D" unique_id=1976276744 instance=ExtResource("4_du5bo")]
+offset_left = 124.0
+offset_top = 82.0
+offset_right = 124.0
+offset_bottom = 82.0
+scale = Vector2(0.5671637, 0.5015647)

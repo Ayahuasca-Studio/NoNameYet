@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b0t126fr4tk3j"]
+
+[ext_resource type="Script" uid="uid://do32jxfm341qu" path="res://Scripts/score.gd" id="1_fsfvi"]
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="1_t1x8i"]
+
+[node name="Score" type="Control" unique_id=1976276744 groups=["score_manager"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsfvi")
+
+[node name="Label" type="Label" parent="." unique_id=703628156]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_t1x8i")
+theme_override_font_sizes/font_size = 22
+text = "Score: 0"

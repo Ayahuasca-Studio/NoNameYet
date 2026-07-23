@@ -25,6 +25,10 @@ AudioConfig="*uid://g7h1ux6jv8rr"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+score_manager=""
+
 [input]
 
 mover_arriba={

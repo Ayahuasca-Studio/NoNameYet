@@ -2404,7 +2404,9 @@ texture = ExtResource("4_6rx4i")
 6:65/0 = 0
 7:65/0 = 0
 8:65/0 = 0
+8:65/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:65/0 = 0
+9:65/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:65/0 = 0
 11:65/0 = 0
 12:65/0 = 0
@@ -2420,7 +2422,9 @@ texture = ExtResource("4_6rx4i")
 6:66/0 = 0
 7:66/0 = 0
 8:66/0 = 0
+8:66/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:66/0 = 0
+9:66/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:66/0 = 0
 11:66/0 = 0
 12:66/0 = 0
@@ -3035,6 +3039,10 @@ position = Vector2(364, -216)
 position = Vector2(115, 19)
 maquina = NodePath("../Boiler")
 
+[node name="Control2" parent="." unique_id=1870742389 node_paths=PackedStringArray("maquina") instance=ExtResource("8_fpmlx")]
+position = Vector2(58, 18)
+maquina = NodePath("../Transformador")
+
 [node name="Interfaz" parent="." unique_id=1390139656 instance=ExtResource("10_6rx4i")]
 
 [node name="CasilleroEPP" parent="." unique_id=922661653 instance=ExtResource("9_1byjf")]
@@ -3051,10 +3059,6 @@ nombre_item = "Botas"
 position = Vector2(-384.00003, -244)
 nombre_item = "Casco"
 
-[node name="Control2" parent="." unique_id=1870742389 node_paths=PackedStringArray("maquina") instance=ExtResource("8_fpmlx")]
-position = Vector2(58, 18)
-maquina = NodePath("../Transformador")
-
 [node name="Transformador" parent="." unique_id=323665234 instance=ExtResource("11_qrb6p")]
 position = Vector2(-315, -17)
 
@@ -3065,9 +3069,8 @@ epp_requerido = 2
 danio_por_segundo = 25.0
 
 [node name="BarreraEscalera" parent="." unique_id=369001316 instance=ExtResource("13_4iy28")]
-position = Vector2(176, -49)
+position = Vector2(177, -81)
 scale = Vector2(2, 2)
-tiempo_espera_segundos = 10.0
 
 [node name="Cleaner" parent="." unique_id=795351008 instance=ExtResource("13_sk5cb")]
 position = Vector2(-197.00002, 29)

@@ -11,6 +11,7 @@ size = Vector2(76, 67)
 
 [node name="Boiler" type="Area2D" unique_id=508071656]
 script = ExtResource("1_tjrs3")
+puntos_ganados = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=103997566]
 scale = Vector2(0.2, 0.2)

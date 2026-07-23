@@ -11,6 +11,7 @@ size = Vector2(76, 77)
 
 [node name="Transformador" type="Area2D" unique_id=323665234]
 script = ExtResource("1_5momw")
+puntos_ganados = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=328564749]
 scale = Vector2(0.8641878, 1.070307)
