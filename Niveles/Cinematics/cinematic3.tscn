@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d1wkvovegjltq"]
+
+[ext_resource type="VideoStream" uid="uid://p7e3ko578q1x" path="res://Assets/Cinematics/Escena_3.ogv" id="1_76qg3"]
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="2_ksyvm"]
+
+[node name="Cinematic3" type="Control" unique_id=660002203]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1922763443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_76qg3")
+autoplay = true
+expand = true
+
+[node name="Label" type="Label" parent="." unique_id=818098213]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 31.0
+offset_right = 808.0
+offset_bottom = 118.0
+theme_override_colors/font_shadow_color = Color(0.015686275, 0.015686275, 0.015686275, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_ksyvm")
+theme_override_font_sizes/font_size = 28
+text = "Nivel 3: El regreso
+"

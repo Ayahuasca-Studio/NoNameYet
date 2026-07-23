@@ -14,12 +14,14 @@ shape = SubResource("RectangleShape2D_xrivr")
 debug_color = Color(0.66141534, 0.5125434, 0.11280615, 0.41960785)
 
 [node name="Estado" type="Label" parent="." unique_id=1483745232]
-offset_left = -48.0
-offset_top = -34.0
-offset_right = 48.0
-offset_bottom = -10.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = -27.0
+offset_top = -37.0
+offset_right = 27.0
+offset_bottom = -22.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_xyw5n")
+theme_override_font_sizes/font_size = 9
 text = "Encender"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://qwjyqalde1yc"]
+
+[ext_resource type="Script" uid="uid://u47f3dn3q2lg" path="res://Scripts/CleanPlayer.gd" id="1_kq6ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(42, 17)
+
+[node name="Cleaner" type="Area2D" unique_id=1137090775]
+script = ExtResource("1_kq6ua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1771173032]
+shape = SubResource("RectangleShape2D_xrivr")
+debug_color = Color(0.66141534, 0.5125434, 0.11280615, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

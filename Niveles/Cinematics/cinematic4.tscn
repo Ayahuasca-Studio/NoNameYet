@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://s3u2rna8gy2e"]
+
+[ext_resource type="VideoStream" uid="uid://d0j1x4a504jw5" path="res://Assets/Cinematics/escena_4.ogv" id="1_a6c0r"]
+
+[node name="Cinematic4" type="Control" unique_id=660002203]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1922763443]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_a6c0r")
+autoplay = true
+expand = true
