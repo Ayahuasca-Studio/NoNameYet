@@ -39,7 +39,7 @@ func _on_btn_jugar_pressed():
 
 func _on_btn_opciones_pressed():
 	AudioConfig.play_sfx(AudioConfig.SFX_CLICK)
-	print("Abrir panel de opciones (pendiente de implementar)")
+	get_tree().change_scene_to_file("res://interfaces/options.tscn")
 
 func _on_btn_salir_principal_pressed():
 	AudioConfig.play_sfx(AudioConfig.SFX_CLICK)

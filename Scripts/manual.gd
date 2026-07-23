@@ -31,7 +31,8 @@ func cambiar_pagina(indice_destino):
 		return
 		
 	esta_animando = true
-	
+	AudioConfig.play_sfx(AudioConfig.SFX_PAGE_TURN)
+
 	# PASO 1: Desvanecer el texto actual usando un Tween (Opacidad a 0)
 	var tween_salida = create_tween()
 	# Modificamos la 'a' (Alpha/Transparencia) del modulate del contenedor a 0.0 en 0.2 segundos

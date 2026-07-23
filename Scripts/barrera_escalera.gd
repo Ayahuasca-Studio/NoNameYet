@@ -38,7 +38,9 @@ func abrir_barrera() -> void:
 		return # Evitar doble ejecución
 
 	esta_abierta = true
+
 	print("🚨 Barrera: ¡Puntos alcanzados! Abriendo acceso a escaleras.")
+
 
 	# 1. Efecto Visual
 	# Opción A: Ocultar el sprite
