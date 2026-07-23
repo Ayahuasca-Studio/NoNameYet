@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ue7h6rngt5f7" path="res://Assets/Map/Walls/Room_Builder_Walls_16x16.png" id="3_1byjf"]
 [ext_resource type="Texture2D" uid="uid://dut5m5qskr7ue" path="res://Assets/Map/Furniture/19_Hospital_16x16.png" id="4_6rx4i"]
 [ext_resource type="PackedScene" uid="uid://c4unlgj8iqive" path="res://Prefabs/jugador.tscn" id="5_qrb6p"]
+[ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="6_0gn7i"]
 [ext_resource type="Script" uid="uid://dkagnituqcf0u" path="res://Scripts/stair_up.gd" id="6_bgxpg"]
 [ext_resource type="PackedScene" uid="uid://bph2wnl2j0so2" path="res://Prefabs/boiler.tscn" id="7_4iy28"]
 [ext_resource type="PackedScene" uid="uid://1bnos5p26itf" path="res://Prefabs/control.tscn" id="8_fpmlx"]
@@ -3028,6 +3029,17 @@ target_spawn_point = "SpawnStairs"
 [node name="StairCollision" type="CollisionShape2D" parent="Stairs" unique_id=1457727912]
 position = Vector2(176, -166)
 shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Label" type="Label" parent="Stairs" unique_id=118458821]
+offset_left = 149.0
+offset_top = -174.0
+offset_right = 265.0
+offset_bottom = -151.0
+scale = Vector2(0.39055285, 0.6189565)
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("6_0gn7i")
+text = "Siguiente Nivel"
 
 [node name="SpawnStairs" type="Marker2D" parent="." unique_id=1555238953]
 position = Vector2(176, -143)

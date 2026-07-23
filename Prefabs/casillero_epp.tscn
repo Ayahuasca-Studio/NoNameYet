@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://k7dy3ln37fpj" path="res://Scripts/casillero_epp.gd" id="1_6cgeh"]
 [ext_resource type="Texture2D" uid="uid://crwx850cmjysg" path="res://Assets/Map/EPP/casillero/cascocasillero.png" id="2_1wymn"]
 [ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="3_043d7"]
-[ext_resource type="Texture2D" uid="uid://15x7shmqdeny" path="res://Assets/Map/EPP/casillero/audifonoscasillero.png" id="3_uu3oq"]
 [ext_resource type="Texture2D" uid="uid://igkg7cax7k73" path="res://Assets/Map/EPP/casillero/botascasillero.png" id="4_khvj7"]
 [ext_resource type="Texture2D" uid="uid://b85cd051ftg7s" path="res://Assets/Map/EPP/casillero/guantescasillero.png" id="5_hyws7"]
 
@@ -18,7 +17,7 @@ size = Vector2(16, 28)
 [node name="CasilleroEPP" type="Area2D" unique_id=922661653]
 scale = Vector2(1.6800001, 1)
 script = ExtResource("1_6cgeh")
-imagenes_casillero = Array[Texture2D]([ExtResource("2_1wymn"), ExtResource("3_uu3oq"), ExtResource("4_khvj7"), ExtResource("5_hyws7")])
+imagenes_casillero = Array[Texture2D]([ExtResource("2_1wymn"), ExtResource("5_hyws7"), ExtResource("4_khvj7"), ExtResource("5_hyws7")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=328285498]
 texture_filter = 1
