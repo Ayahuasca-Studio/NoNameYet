@@ -22,6 +22,11 @@ func modificar_estres(cantidad: float) -> void:
 	#control de interfaz grafica
 	if interfaz:
 		interfaz.actualizar_estres(estres_planta)
+	# Alarma para estres muy alto
+	if estres_planta>= 75:
+		AudioConfig.play_sfx(AudioConfig.SFX_ALARM)
+		
+
 	# Condición de derrota
 	if estres_planta >= max_estres:
 		derrota_juego()
