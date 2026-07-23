@@ -5,6 +5,34 @@
 [ext_resource type="FontFile" uid="uid://d0i8cmk5lba7s" path="res://Assets/mojangles-v2.otf" id="2_3cdnv"]
 [ext_resource type="Texture2D" uid="uid://crkwks78smrkl" path="res://Assets/GUI/Options/switchup.png" id="3_m3bsj"]
 [ext_resource type="Texture2D" uid="uid://cmuqie4x3msms" path="res://Assets/GUI/Options/switchdown.png" id="4_t1m5g"]
+[ext_resource type="Texture2D" uid="uid://36rfgavq65p8" path="res://Assets/GUI/Menu/volver_a_menu.png" id="5_volver"]
+[ext_resource type="Texture2D" uid="uid://cargmxjgn0rkg" path="res://Assets/GUI/Menu/volver_a_menu_hover.png" id="6_volverh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vol_panel"]
+bg_color = Color(0.06, 0.05, 0.04, 0.55)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slider_bg"]
+bg_color = Color(0.12, 0.09, 0.07, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
+border_width_top = 1
+border_width_bottom = 1
+border_width_left = 1
+border_width_right = 1
+border_color = Color(0, 0, 0, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slider_fill"]
+bg_color = Color(0.72, 0.5, 0.22, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_left = 6
+corner_radius_bottom_right = 6
 
 [node name="Options" type="Control" unique_id=764918039]
 layout_mode = 3
@@ -111,3 +139,122 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_3cdnv")
 theme_override_font_sizes/font_size = 157
 text = "SÍ        NO"
+
+[node name="VolumePanelBg" type="PanelContainer" parent="." unique_id=3400002001]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -560.0
+offset_top = -195.0
+offset_right = 560.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vol_panel")
+
+[node name="VolumeContainer" type="HBoxContainer" parent="VolumePanelBg" unique_id=3400001001]
+layout_mode = 2
+theme_override_constants/separation = 28
+alignment = 1
+
+[node name="GeneralRow" type="VBoxContainer" parent="VolumePanelBg/VolumeContainer" unique_id=3400001002]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="LabelGeneral" type="Label" parent="VolumePanelBg/VolumeContainer/GeneralRow" unique_id=3400001003]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.92, 0.85, 0.72, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3cdnv")
+theme_override_font_sizes/font_size = 15
+text = "GENERAL"
+
+[node name="SliderGeneral" type="HSlider" parent="VolumePanelBg/VolumeContainer/GeneralRow" unique_id=3400001004]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_slider_bg")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_slider_fill")
+min_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="MusicaRow" type="VBoxContainer" parent="VolumePanelBg/VolumeContainer" unique_id=3400001005]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="LabelMusica" type="Label" parent="VolumePanelBg/VolumeContainer/MusicaRow" unique_id=3400001006]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.92, 0.85, 0.72, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3cdnv")
+theme_override_font_sizes/font_size = 15
+text = "MÚSICA"
+
+[node name="SliderMusica" type="HSlider" parent="VolumePanelBg/VolumeContainer/MusicaRow" unique_id=3400001007]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_slider_bg")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_slider_fill")
+min_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="EfectosRow" type="VBoxContainer" parent="VolumePanelBg/VolumeContainer" unique_id=3400001008]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="LabelEfectos" type="Label" parent="VolumePanelBg/VolumeContainer/EfectosRow" unique_id=3400001009]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.92, 0.85, 0.72, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3cdnv")
+theme_override_font_sizes/font_size = 15
+text = "EFECTOS"
+
+[node name="SliderEfectos" type="HSlider" parent="VolumePanelBg/VolumeContainer/EfectosRow" unique_id=3400001010]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/slider = SubResource("StyleBoxFlat_slider_bg")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_slider_fill")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_slider_fill")
+min_value = 0.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="VolverButton" type="TextureButton" parent="." unique_id=3400001011]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -100.0
+offset_right = 110.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_volver")
+texture_hover = ExtResource("6_volverh")
+ignore_texture_size = true
+stretch_mode = 5

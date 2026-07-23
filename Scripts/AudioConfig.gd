@@ -25,6 +25,11 @@ const SFX_PAGE_TURN: String = "res://Assets/Sounds/page_turn.wav"
 const MUSIC_MENU: String = "res://Assets/Sounds/menu_music.ogg"
 const MUSIC_LEVEL: String = "res://Assets/Sounds/level_music.ogg"
 
+# --- VOLÚMENES (0.0 a 1.0), separados por bus ---
+var master_volume: float = 1.0
+var music_volume: float = 1.0
+var sfx_volume: float = 1.0
+
 # --- REPRODUCTORES INTERNOS ---
 # Usamos un pequeño pool de AudioStreamPlayer para que dos SFX simultáneos
 # (ej: falla de reparación + daño al jugador en el mismo frame) no se corten entre sí.
@@ -34,13 +39,26 @@ var _music_player: AudioStreamPlayer
 var _current_music_path: String = ""
 
 func _ready() -> void:
+	_asegurar_bus("Music")
+	_asegurar_bus("SFX")
+
 	for i in SFX_POOL_SIZE:
 		var p = AudioStreamPlayer.new()
+		p.bus = "SFX"
 		add_child(p)
 		_sfx_players.append(p)
 
 	_music_player = AudioStreamPlayer.new()
+	_music_player.bus = "Music"
 	add_child(_music_player)
+
+## Crea el bus de audio si todavía no existe, como hijo de "Master".
+func _asegurar_bus(nombre: String) -> void:
+	if AudioServer.get_bus_index(nombre) == -1:
+		var idx = AudioServer.bus_count
+		AudioServer.add_bus(idx)
+		AudioServer.set_bus_name(idx, nombre)
+		AudioServer.set_bus_send(idx, "Master")
 
 func _get_free_sfx_player() -> AudioStreamPlayer:
 	for p in _sfx_players:
@@ -55,6 +73,24 @@ func set_sound(enabled: bool) -> void:
 	# Mutea o desmutea el bus principal de audio ("Master") en Godot
 	var master_bus_index = AudioServer.get_bus_index("Master")
 	AudioServer.set_bus_mute(master_bus_index, not sound_enabled)
+
+## volumen entre 0.0 (silencio) y 1.0 (máximo)
+func set_master_volume(volumen: float) -> void:
+	master_volume = clampf(volumen, 0.0, 1.0)
+	var idx = AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_db(idx, linear_to_db(master_volume))
+
+func set_music_volume(volumen: float) -> void:
+	music_volume = clampf(volumen, 0.0, 1.0)
+	var idx = AudioServer.get_bus_index("Music")
+	if idx != -1:
+		AudioServer.set_bus_volume_db(idx, linear_to_db(music_volume))
+
+func set_sfx_volume(volumen: float) -> void:
+	sfx_volume = clampf(volumen, 0.0, 1.0)
+	var idx = AudioServer.get_bus_index("SFX")
+	if idx != -1:
+		AudioServer.set_bus_volume_db(idx, linear_to_db(sfx_volume))
 
 ## Reproduce un efecto de sonido de una sola vez (clicks, botones, etc.)
 ## No hace nada (sin crashear) si el archivo todavía no existe.
