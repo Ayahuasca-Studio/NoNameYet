@@ -369,42 +369,61 @@ Ten cuidado a los cuartos que entras. [b]Puedes hacerte daño a la vida[/b] si n
 En la Planta Baja existen máquinas que [b]primero debes apagar desde su panel de control[/b] para poder arreglarlas con seguridad."
 
 [node name="Fire" type="Control" parent="Manual/PageContainer" unique_id=993719827]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Fire" unique_id=1616281319]
 layout_mode = 0
-offset_left = 610.00006
-offset_top = 318.0
-offset_right = 960.8522
-offset_bottom = 559.6957
+offset_left = 622.99994
+offset_top = 111.0
+offset_right = 950.43524
+offset_bottom = 512.7439
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
-text = " INSTRUCCIONES
- 1. Apagar el gas (P1)
- 2. Usar casco, botas y  guantes
- 3. Llevar extintor (Store)
- 4. Apagar Fuego en kitchen
- 5. Activar ventilación  y prender gas (P1) "
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_italics_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+theme_override_fonts/mono_font = ExtResource("1_4mqed")
+bbcode_enabled = true
+text = "
+• [b]Desconexión Preventiva:[/b]
+Es obligatorio apagar la maquinaria desde las salas de control antes de realizar cualquier reparación técnica.
+• [b]Progreso de Nivel:[/b]
+Cada reparación exitosa otorga puntos. Al alcanzar la meta requerida, se habilitará el paso hacia el [color=yellow]\"Siguiente Nivel\"[/color].
+[center][color=red][b]⚠️ AVISO:[b][/color]
+[i]\"El incumplimiento de las normas de seguridad causará daños a la salud o fallas críticas en la infraestructura.\"[/i][/center]"
 
 [node name="Title" type="RichTextLabel" parent="Manual/PageContainer/Fire" unique_id=1600325370]
 layout_mode = 0
-offset_left = 333.99997
-offset_top = 111.0
-offset_right = 442.06635
-offset_bottom = 161.03357
+offset_left = 244.00002
+offset_top = 114.0
+offset_right = 568.01135
+offset_bottom = 546.5097
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5578324, 0.46098202, 0.17176595, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
-theme_override_font_sizes/normal_font_size = 17
-text = "Incendio"
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_italics_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+theme_override_fonts/mono_font = ExtResource("1_4mqed")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 15
+bbcode_enabled = true
+text = "[center][b]MANUAL OPERATIVO DE MANTENIMIENTO[/b][/center]
+[color=yellow][b] DESCRIPCIÓN GENERAL:[/b][/color]
+Este manual contiene los procedimientos estándar para gestionar fallas operativas y garantizar el funcionamiento de las instalaciones de la planta.
+[color=orange][b] PROTOCOLOS GENERALES:[/b][/color]
+• [b]Monitoreo de Fallas:[/b]
+Identifica las máquinas averiadas observando sus cambios de color y alertas visuales.
+• [b]Uso Obligatorio de EPP:[/b]
+Consulta los requerimientos de protección antes de ingresar a áreas restringidas."
 
 [node name="Server" type="Control" parent="Manual/PageContainer" unique_id=606954892]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -460,32 +479,52 @@ offset_bottom = 40.0
 
 [node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Boiler" unique_id=2088566527]
 layout_mode = 0
-offset_left = 627.0
-offset_top = 355.0
-offset_right = 944.07355
-offset_bottom = 520.3959
+offset_left = 626.0
+offset_top = 120.0
+offset_right = 943.07355
+offset_bottom = 441.61554
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
-text = " INSTRUCCIONES
- 1. Apagar vapor (Control)
- 2. Uso de guantes
- 3. Arreglar maquina (Boiler Room)
- 4. Prender vapor (Control)"
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_italics_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+theme_override_fonts/mono_font = ExtResource("1_4mqed")
+bbcode_enabled = true
+text = "[center][b]ALERTA DE SEGURIDAD[/b][/center]
+
+[color=red][b]🔥 FALLA EN CALDERAS:[/b][/color]
+Cuando la caldera empiece a fallar [color=red][b]se tornará roja[/b][/color]. ¡Corre y arréglala antes de que dañe las tuberías!
+[color=orange][b]⚠️ ATENCIÓN:[/b][/color]
+[i]Si intentas reparar la caldera sin haberla apagado primero o sin el casco, no podrás completar el proceso o sufrirás daño.[/i]"
 
 [node name="Title" type="RichTextLabel" parent="Manual/PageContainer/Boiler" unique_id=1880167573]
 layout_mode = 0
-offset_left = 290.99997
-offset_top = 115.0
-offset_right = 595.1688
-offset_bottom = 165.03357
+offset_left = 238.0
+offset_top = 112.99999
+offset_right = 566.10645
+offset_bottom = 543.40045
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5578324, 0.46098202, 0.17176595, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
-theme_override_font_sizes/normal_font_size = 17
-text = " Fallo en las Calderas"
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+theme_override_fonts/mono_font = ExtResource("1_4mqed")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center][b]MANTENIMIENTO DE CALDERA[/b][/center]
+
+[center][img=72]res://Assets/Map/Furniture/retro-pixel-art-industrial-boiler-with-steam-and-gears-nostalgic-gaming-design-free-vector-removebg-preview.png[/img][/center]
+
+[b]PROCEDIMIENTO DE REPARACIÓN:[/b]
+
+[color=yellow][b]1.[/b][/color] Apaga la máquina desde la sala de control (computadoras azules) usando [b][Espacio][/b].
+[color=yellow][b]2.[/b][/color] Debes llevar equipado los [color=yellow][b]Guantes de Seguridad[/b][/color]: [img=24]res://Assets/Map/EPP/guantes.png[/img]
+[color=yellow][b]3.[/b][/color] Acércate a la caldera y arréglala presionando [b][Espacio][/b].
+
+"
 
 [node name="Energy" type="Control" parent="Manual/PageContainer" unique_id=1178438757]
 visible = false
@@ -495,30 +534,49 @@ offset_bottom = 40.0
 
 [node name="Instruction" type="RichTextLabel" parent="Manual/PageContainer/Energy" unique_id=180956731]
 layout_mode = 0
-offset_left = 627.0
-offset_top = 355.0
-offset_right = 944.07355
-offset_bottom = 520.3959
+offset_left = 620.00006
+offset_top = 116.000015
+offset_right = 937.0736
+offset_bottom = 514.623
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5667738, 0.45260406, 0.24188927, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
-text = " INSTRUCCIONES
-  1. Para entrar necesitas orejeras
- 2. Apagas las máquina (Energy)
-  3. Recargas de gasolina
- 4. Prender la máquina
-"
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_italics_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+theme_override_fonts/mono_font = ExtResource("1_4mqed")
+bbcode_enabled = true
+text = "[center][b]ALERTA DE SEGURIDAD[/b][/center]
+
+[color=red][b]⚡ FALLA EN TRANSFORMADOR:[/b][/color]
+El transformador [color=red][b]se pondrá rojo[/b][/color] cuando empiece a fallar. ¡Arréglalo antes de que destruya las instalaciones eléctricas!
+
+[color=red][b]⚠️ RIESGO DE DESCARGA:[/b][/color]
+[i]Si entras al cuarto sin la protección adecuada ([b]botas y guantes[/b]), recibirás una descarga eléctrica automáticamente.[/i]"
 
 [node name="Title" type="RichTextLabel" parent="Manual/PageContainer/Energy" unique_id=968361522]
 layout_mode = 0
-offset_left = 292.99997
-offset_top = 109.0
-offset_right = 597.1688
-offset_bottom = 159.03357
+offset_left = 232.0
+offset_top = 118.99999
+offset_right = 585.9279
+offset_bottom = 629.7868
 rotation = 0.002947845
 theme_override_colors/font_outline_color = Color(0.5578324, 0.46098202, 0.17176595, 1)
 theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_font = ExtResource("1_4mqed")
+theme_override_fonts/bold_italics_font = ExtResource("1_4mqed")
+theme_override_fonts/italics_font = ExtResource("1_4mqed")
+theme_override_fonts/mono_font = ExtResource("1_4mqed")
 theme_override_font_sizes/normal_font_size = 17
-text = " Fallo en generador"
+bbcode_enabled = true
+text = "[center][b]MANTENIMIENTO DE ENERGÍA[/b][/center]
+
+[center][img=72]res://Assets/Map/Furniture/transformador.png[/img][/center]
+[color=yellow][b]1.[/b][/color] Primero apaga la energía en la sala de control (computadoras blancas) presionando [b][Espacio][/b].
+[color=yellow][b]2.[/b][/color] Debes llevar equipados los elementos de protección:
+   • Botas aislantes: [img=24]res://Assets/Map/EPP/boots.png[/img]
+   • Guantes de protección: [img=24]res://Assets/Map/EPP/guantes.png[/img]
+[color=yellow][b]3.[/b][/color] Acércate y arregla el transformador usando [b][Espacio][/b].
+"

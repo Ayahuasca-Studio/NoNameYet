@@ -2984,9 +2984,6 @@ texture = ExtResource("3_8sjxe")
 [sub_resource type="TileSet" id="TileSet_0yjdo"]
 sources/0 = SubResource("TileSetAtlasSource_gk1mw")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(64, 20)
-
 [node name="piso_uno" type="Node2D" unique_id=23583590]
 script = ExtResource("1_mno82")
 
@@ -3024,10 +3021,6 @@ script = ExtResource("9_4yg13")
 next_scene = "planta_baja.tscn"
 target_spawn_point = "SpawnStairs"
 
-[node name="Stairs" type="CollisionShape2D" parent="StairUp" unique_id=470825813]
-position = Vector2(176, -166)
-shape = SubResource("RectangleShape2D_13qdw")
-
 [node name="SpawnStairs" type="Marker2D" parent="." unique_id=29355400]
 position = Vector2(176, -143)
 
@@ -3042,6 +3035,7 @@ nombre_item = "Botas"
 [node name="BarreraEscalera" parent="." unique_id=369001316 node_paths=PackedStringArray("label_noticia") instance=ExtResource("11_tmm2b")]
 position = Vector2(136, -224)
 rotation = 1.5707964
+puntos_necesarios = 30
 label_noticia = NodePath("../Jugador/Noticia")
 
 [node name="ElevatorUp" parent="." unique_id=613870582 instance=ExtResource("12_6ek1d")]
