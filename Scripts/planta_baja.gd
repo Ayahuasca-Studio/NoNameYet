@@ -19,7 +19,7 @@ func modificar_estres(cantidad: float) -> void:
 		return
 	# Modificamos el valor y usamos 'clampf' para asegurarnos de que no baje de 0 ni suba de 100
 	estres_planta = clampf(estres_planta + cantidad, 0.0, max_estres)
-	#control de interfaz grafica
+	#control de interfaz grafca
 	if interfaz:
 		interfaz.actualizar_estres(estres_planta)
 	# Condición de derrota
