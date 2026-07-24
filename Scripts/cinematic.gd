@@ -7,6 +7,10 @@ extends Control
 @export_file("*.tscn") var siguiente_escena: String
 
 func _ready() -> void:
+	# Detenemos la música del menú (u otra que estuviera sonando) para que no se
+	# escuche de fondo durante la cinemática.
+	AudioConfig.stop_music()
+
 	video_player.finished.connect(_on_video_terminado)
 	video_player.play()
 
