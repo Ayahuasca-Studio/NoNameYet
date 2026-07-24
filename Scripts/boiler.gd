@@ -19,7 +19,7 @@ var epp_req: int = 1
 
 # --- NUEVAS VARIABLES DE PUNTAJE ---
 @export var puntos_ganados: int = 100
-var generando_puntos: bool = false
+var generando_puntos: bool = true
 
 func _ready() -> void:
 	# Evaluamos si empieza dando puntos desde el minuto cero

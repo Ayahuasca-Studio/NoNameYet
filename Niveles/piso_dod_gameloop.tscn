@@ -3644,7 +3644,6 @@ text = "Siguiente Nivel"
 [node name="BarreraEscalera" parent="." unique_id=369001316 instance=ExtResource("48_gyfec")]
 position = Vector2(137, -225)
 scale = Vector2(0.5632065, 2.6856363)
-puntos_necesarios = 10
 
 [node name="Characters" type="Node2D" parent="." unique_id=2033707823]
 
@@ -3665,11 +3664,13 @@ animacion_inicial = "idle_up"
 position = Vector2(-179, -13)
 minTime = 3.0
 maxTime = 5.0
+puntos_ganados = 20
 
 [node name="Maquina2" parent="." unique_id=1811259703 instance=ExtResource("5_14qkx")]
 position = Vector2(247, -135)
 minTime = 3.0
 maxTime = 5.0
+puntos_ganados = 20
 
 [node name="Interfaz" parent="." unique_id=1390139656 instance=ExtResource("6_uf8ot")]
 
@@ -3713,6 +3714,7 @@ visible = false
 
 [node name="Boiler" parent="." unique_id=508071656 instance=ExtResource("12_14qkx")]
 position = Vector2(328, 147)
+puntos_ganados = 20
 
 [node name="Control" parent="." unique_id=1137090775 node_paths=PackedStringArray("maquina") instance=ExtResource("13_uf8ot")]
 position = Vector2(170, 95)

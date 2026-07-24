@@ -19,7 +19,7 @@ var epp_req: int = 1
 
 # --- NUEVAS VARIABLES DE PUNTAJE ---
 @export var puntos_ganados: int = 150 # Más puntos por ser un transformador
-var generando_puntos: bool = false
+var generando_puntos: bool = true
 
 func _ready() -> void:
 	# Evaluamos el estado inicial apenas cargue el nivel
