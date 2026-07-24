@@ -3687,7 +3687,7 @@ danio_por_segundo = 8.0
 mensaje_alerta = "Se requiere botas"
 
 [node name="SpawnElevator" type="Marker2D" parent="." unique_id=29355400]
-position = Vector2(177, -225)
+position = Vector2(174, -106)
 
 [node name="CasilleroEPP" parent="." unique_id=922661653 instance=ExtResource("9_iu83h")]
 position = Vector2(195, -32)
