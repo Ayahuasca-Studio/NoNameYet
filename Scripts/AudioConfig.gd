@@ -39,17 +39,25 @@ var _music_player: AudioStreamPlayer
 var _current_music_path: String = ""
 
 func _ready() -> void:
+	# Importante: el sonido no debe congelarse cuando el juego se pausa
+	# (por ejemplo, al abrir el manual/guía, que pausa el árbol de la escena).
+	# Sin esto, un SFX que empieza justo antes/durante la pausa se queda
+	# "atascado" y puede sonar en loop infinito.
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
 	_asegurar_bus("Music")
 	_asegurar_bus("SFX")
 
 	for i in SFX_POOL_SIZE:
 		var p = AudioStreamPlayer.new()
 		p.bus = "SFX"
+		p.process_mode = Node.PROCESS_MODE_ALWAYS
 		add_child(p)
 		_sfx_players.append(p)
 
 	_music_player = AudioStreamPlayer.new()
 	_music_player.bus = "Music"
+	_music_player.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(_music_player)
 
 ## Crea el bus de audio si todavía no existe, como hijo de "Master".

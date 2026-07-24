@@ -14,4 +14,4 @@ machine_break.ogg   - Kenney Digital Audio Pack (kenney.nl) - low_down.ogg
 stairs.ogg          - Kenney Impact Sounds Pack (kenney.nl) - 3 footsteps de concreto combinados
 footstep.ogg        - Kenney Impact Sounds Pack (kenney.nl) - footstep_concrete_000.ogg
 barrier_open.ogg    - Kenney Sci-Fi Sounds Pack (kenney.nl) - door_open_000.ogg
-page_turn.wav       - Kenney Interface Sounds Pack (kenney.nl) - scroll_002.wav
+page_turn.wav       - Swish de papel generado (ruido filtrado con envolvente), hecho para este proyecto
