@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://br0phd5umqute"]
+
+[ext_resource type="Script" uid="uid://c2x1vlwvvj1w7" path="res://Scripts/win.gd" id="1_tlwlo"]
+[ext_resource type="Texture2D" uid="uid://cw7pay6mus2yx" path="res://Assets/GUI/Menu/Pantalla Win.png" id="2_a2arh"]
+[ext_resource type="Texture2D" uid="uid://36rfgavq65p8" path="res://Assets/GUI/Menu/volver_a_menu.png" id="3_l3icy"]
+[ext_resource type="Texture2D" uid="uid://cargmxjgn0rkg" path="res://Assets/GUI/Menu/volver_a_menu_hover.png" id="4_5g6xn"]
+[ext_resource type="Texture2D" uid="uid://ic5q4ki3jyf7" path="res://Assets/GUI/Menu/SalirNa.png" id="5_ksg7r"]
+[ext_resource type="Texture2D" uid="uid://c2v228ng3xtiu" path="res://Assets/GUI/Menu/salirH.png" id="6_uqlq5"]
+
+[node name="Win" type="CanvasLayer" unique_id=917417489]
+script = ExtResource("1_tlwlo")
+
+[node name="Control" type="Control" parent="." unique_id=1854779276]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1375934441]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_a2arh")
+expand_mode = 3
+
+[node name="Volver" type="TextureButton" parent="Control" unique_id=760382645]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -223.0
+offset_top = 72.0
+offset_right = -70.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_l3icy")
+texture_hover = ExtResource("4_5g6xn")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Salir" type="TextureButton" parent="Control" unique_id=313625081]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = 71.0
+offset_right = 230.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_ksg7r")
+texture_hover = ExtResource("6_uqlq5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="Control/Volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="Control/Salir" to="." method="_on_salir_pressed"]

@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8n6du")
-siguiente_escena = "uid://b6a6x7a7fqh24"
+siguiente_escena = "uid://br0phd5umqute"
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1922763443]
 layout_mode = 1
